@@ -28,9 +28,9 @@ public class UnoptimizedCode {
                 calendar.add(Calendar.DATE, 2);
             }
         }
-        List<Holiday> holidays = getHolidays(calendar.get(Calendar.YEAR), calendar.getTime()); // Find holidays to this date
+        List<Holiday> holidays = getHolidays(calendar.getTime()); // Find holidays to this date
         for (Holiday holiDay : holidays) {
-            LocalDate holyDate = holiDay.getHolyDate();
+            LocalDate holyDate = holiDay.getDate();
             if (holyDate.getDayOfWeek() != DayOfWeek.SUNDAY && holyDate.getDayOfWeek() != DayOfWeek.SATURDAY) {
                 calendar.add(Calendar.DATE, 1);
             }
@@ -46,13 +46,12 @@ public class UnoptimizedCode {
     /**
      * Get Holidays on a year
      *
-     * @param year Year to collect
      * @return List of available holidays
      */
-    private List<Holiday> getHolidays(int year, Date lastDate) {
-        return Data.HOLY_DAYS.stream().filter(holiday -> {
+    private List<Holiday> getHolidays(Date lastDate) {
+        return Data.HOLIDAYS.stream().filter(holiday -> {
             LocalDate localDate = LocalDate.from(new java.sql.Date(lastDate.getTime()).toLocalDate());
-            return holiday.getYear() == year && holiday.getHolyDate().isBefore(localDate) && holiday.getHolyDate().equals(localDate);
+            return holiday.getDate().isBefore(localDate) && holiday.getDate().equals(localDate);
         }).collect(Collectors.toList());
     }
 }
