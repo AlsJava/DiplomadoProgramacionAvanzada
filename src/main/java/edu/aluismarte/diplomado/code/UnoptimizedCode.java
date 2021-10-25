@@ -52,7 +52,7 @@ public class UnoptimizedCode {
     private List<Holiday> getHolidays(int year, Date lastDate) {
         return Data.HOLY_DAYS.stream().filter(holiday -> {
             LocalDate localDate = LocalDate.from(new java.sql.Date(lastDate.getTime()).toLocalDate());
-            return holiday.getYear() == year && holiday.getHolyDate().isAfter(localDate) && holiday.getHolyDate().equals(localDate);
+            return holiday.getYear() == year && holiday.getHolyDate().isBefore(localDate) && holiday.getHolyDate().equals(localDate);
         }).collect(Collectors.toList());
     }
 }

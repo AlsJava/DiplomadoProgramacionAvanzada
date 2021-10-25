@@ -12,8 +12,8 @@ import java.util.List;
 public class Data {
 
     public static final List<Holiday> HOLY_DAYS = List.of(
-           new Holiday(2021, LocalDate.of(2021, Month.JANUARY, 3)),
-           new Holiday(2021, LocalDate.of(2021, Month.JANUARY, 10)),
-           new Holiday(2021, LocalDate.of(2021, Month.JANUARY, 12))
+           new Holiday("", LocalDate.of(2021, Month.JANUARY, 3)),
+           new Holiday("", LocalDate.of(2021, Month.JANUARY, 10)),
+           new Holiday("", LocalDate.of(2021, Month.JANUARY, 12))
     );
 }

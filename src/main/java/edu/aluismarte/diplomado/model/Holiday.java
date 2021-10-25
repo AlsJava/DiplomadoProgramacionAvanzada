@@ -16,7 +16,7 @@ import java.time.LocalDate;
 @Setter
 public class Holiday {
 
-    private int year;
-    private LocalDate holyDate;
+    private String name;
+    private LocalDate date;
 
 }
