@@ -26,7 +26,7 @@ public class OptimizeCode {
     public LocalDate calculateDueDateNoMemory(List<Holiday> holidays, LocalDate startDate, int daysToWait) {
         LocalDate result = startDate; // Its immutable data type
         int laborDays = 0;
-        while (laborDays < daysToWait) {
+        while (true) {
             if (isHoliday(holidays, result)) {
                 // When validate a holiday be sure, maybe we have continues holidays, the reason of IF
                 result = result.plusDays(1); // Skip holiday
@@ -37,16 +37,17 @@ public class OptimizeCode {
                     case WEDNESDAY:
                     case THURSDAY:
                     case FRIDAY:
-                        result = result.plusDays(1);
                         laborDays++; // Count only labor day
                         break;
                     case SATURDAY:
-                        result = result.plusDays(2); // skip weekend
-                        break;
                     case SUNDAY:
-                        result = result.plusDays(1); // skip weekend
                         break;
                 }
+            }
+            if (laborDays < daysToWait) {
+                result = result.plusDays(1);
+            } else {
+                break;
             }
         }
         return result;

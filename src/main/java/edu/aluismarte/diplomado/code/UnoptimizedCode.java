@@ -3,7 +3,6 @@ package edu.aluismarte.diplomado.code;
 import edu.aluismarte.diplomado.Data;
 import edu.aluismarte.diplomado.model.Holiday;
 
-import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.Date;
@@ -17,27 +16,43 @@ import java.util.stream.Collectors;
  */
 public class UnoptimizedCode {
 
-    public Date calculateDueDate(int daysToWait) {
+    public Date calculateDueDate(Date startDate, int daysToWait) {
         Calendar calendar = Calendar.getInstance();
-        calendar.setTime(new Date());
+        calendar.setTime(startDate);
         for (int i = 0; i < daysToWait; i++) {
-            calendar.add(Calendar.DATE, 1);
-            if (calendar.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY) {
-                calendar.add(Calendar.DATE, 1);
-            } else if (calendar.get(Calendar.DAY_OF_WEEK) == Calendar.SATURDAY) {
-                calendar.add(Calendar.DATE, 2);
+            switch (calendar.get(Calendar.DAY_OF_WEEK)) {
+                case Calendar.MONDAY:
+                case Calendar.TUESDAY:
+                case Calendar.WEDNESDAY:
+                case Calendar.THURSDAY:
+                case Calendar.FRIDAY:
+                    calendar.add(Calendar.DATE, 1);
+                    break;
+                case Calendar.SATURDAY:
+                    calendar.add(Calendar.DATE, 2);
+                    break;
+                case Calendar.SUNDAY:
+                    calendar.add(Calendar.DATE, 1);
+                    break;
             }
         }
         List<Holiday> holidays = getHolidays(calendar.getTime()); // Find holidays to this date
         for (Holiday holiDay : holidays) {
             LocalDate holyDate = holiDay.getDate();
-            if (holyDate.getDayOfWeek() != DayOfWeek.SUNDAY && holyDate.getDayOfWeek() != DayOfWeek.SATURDAY) {
-                calendar.add(Calendar.DATE, 1);
-            }
-            if (calendar.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY) {
-                calendar.add(Calendar.DATE, 1);
-            } else if (calendar.get(Calendar.DAY_OF_WEEK) == Calendar.SATURDAY) {
-                calendar.add(Calendar.DATE, 2);
+            switch (holyDate.getDayOfWeek()) {
+                case MONDAY:
+                case TUESDAY:
+                case WEDNESDAY:
+                case THURSDAY:
+                case FRIDAY:
+                    calendar.add(Calendar.DATE, 1);
+                    break;
+                case SATURDAY:
+                    calendar.add(Calendar.DATE, 1);
+                    break;
+                case SUNDAY:
+                    calendar.add(Calendar.DATE, 2);
+                    break;
             }
         }
         return calendar.getTime();
@@ -51,7 +66,7 @@ public class UnoptimizedCode {
     private List<Holiday> getHolidays(Date lastDate) {
         return Data.HOLIDAYS.stream().filter(holiday -> {
             LocalDate localDate = LocalDate.from(new java.sql.Date(lastDate.getTime()).toLocalDate());
-            return holiday.getDate().isBefore(localDate) && holiday.getDate().equals(localDate);
+            return holiday.getDate().isBefore(localDate) || holiday.getDate().equals(localDate);
         }).collect(Collectors.toList());
     }
 }
