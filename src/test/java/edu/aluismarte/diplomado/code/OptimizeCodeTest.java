@@ -1,6 +1,6 @@
 package edu.aluismarte.diplomado.code;
 
-import edu.aluismarte.diplomado.Data;
+import edu.aluismarte.diplomado.utils.Data;
 import edu.aluismarte.diplomado.utils.TimeExtension;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;

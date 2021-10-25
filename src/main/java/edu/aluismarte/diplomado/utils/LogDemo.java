@@ -1,4 +1,4 @@
-package edu.aluismarte.diplomado;
+package edu.aluismarte.diplomado.utils;
 
 import lombok.NoArgsConstructor;
 import org.slf4j.Logger;
