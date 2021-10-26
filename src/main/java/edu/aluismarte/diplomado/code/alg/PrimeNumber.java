@@ -28,7 +28,11 @@ public class PrimeNumber {
         if (number == 2) {
             return true;
         }
-        int square = (int) Math.ceil(Math.sqrt(number));
+        double noRoundSquare = Math.sqrt(number);
+        int square = (int) Math.ceil(noRoundSquare);
+        if (noRoundSquare == square) { // If is perfect square, is not prime
+            return false;
+        }
         for (int i = 2; i <= square; i++) {
             if (number % i == 0) {
                 return false;
