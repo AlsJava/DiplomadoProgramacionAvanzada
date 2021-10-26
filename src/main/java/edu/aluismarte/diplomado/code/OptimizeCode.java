@@ -62,7 +62,7 @@ public class OptimizeCode {
         LocalDate result = startDate; // Its immutable data type
         int laborDays = 0;
         while (true) {
-            laborDays += getIsLaborDay(result);
+            laborDays += getIsLaborDay(holidays, result);
             if (laborDays < daysToWait) {
                 result = result.plusDays(1);
             } else {
@@ -82,9 +82,9 @@ public class OptimizeCode {
                 .collect(Collectors.toList());
     }
 
-    private int getIsLaborDay(LocalDate dateToFind) {
+    private int getIsLaborDay(List<Holiday> holidays, LocalDate dateToFind) {
         return LABOR_DAYS.computeIfAbsent(dateToFind, date -> {
-            if (Data.HOLIDAYS.stream().anyMatch(holiday -> holiday.getDate().isEqual(date))) {
+            if (holidays.stream().anyMatch(holiday -> holiday.getDate().isEqual(date))) {
                 return 0;
             }
             switch (date.getDayOfWeek()) {
