@@ -5,6 +5,9 @@ import org.jdom2.Document;
 import org.jdom2.JDOMConstants;
 import org.jdom2.input.SAXBuilder;
 import org.jdom2.input.sax.XMLReaderSAX2Factory;
+import org.owasp.encoder.Encode;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -17,6 +20,8 @@ import java.io.StringReader;
  */
 public class SecurityCase {
 
+    private static final Logger logger = LoggerFactory.getLogger(SecurityCase.class);
+
     public Document getXML(String file) {
         return getXML(file, getSaxBuilder());
     }
@@ -24,6 +29,10 @@ public class SecurityCase {
     public Document getXML(String file, SAXBuilder saxBuilder) {
         try {
             String xml = readXML(file);
+            logger.debug("Working with log secure {}", Encode.forXml(xml));
+            if (xml == null) {
+                return null;
+            }
             return saxBuilder.build(new StringReader(xml));
         } catch (Exception ex) {
             ex.printStackTrace();
