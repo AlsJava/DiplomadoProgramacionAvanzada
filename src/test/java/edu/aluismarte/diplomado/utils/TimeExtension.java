@@ -17,19 +17,19 @@ public class TimeExtension implements BeforeTestExecutionCallback, AfterTestExec
 
     private static final Logger logger = LoggerFactory.getLogger(TimeExtension.class);
 
-    private static final String START_TIME = "start time";
+    private static final String START_TIME_NS = "start time NS";
 
     @Override
     public void beforeTestExecution(ExtensionContext context) {
-        getStore(context).put(START_TIME, System.currentTimeMillis());
+        getStore(context).put(START_TIME_NS, System.nanoTime());
     }
 
     @Override
     public void afterTestExecution(ExtensionContext context) {
         Method testMethod = context.getRequiredTestMethod();
-        long startTime = getStore(context).remove(START_TIME, long.class);
-        long duration = System.currentTimeMillis() - startTime;
-        logger.info("Method [{}] took {} ms.", testMethod.getName(), duration);
+        long startTimeNS = getStore(context).remove(START_TIME_NS, long.class);
+        double durationNS = System.nanoTime() - startTimeNS;
+        logger.info("Method [{}] took {} ms.", testMethod.getName(),  durationNS / 1000000);
     }
 
     private Store getStore(ExtensionContext context) {

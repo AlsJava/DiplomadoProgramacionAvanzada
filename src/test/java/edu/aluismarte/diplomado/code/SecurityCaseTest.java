@@ -1,5 +1,6 @@
 package edu.aluismarte.diplomado.code;
 
+import edu.aluismarte.diplomado.utils.TimeExtension;
 import org.apache.xerces.parsers.SAXParser;
 import org.jdom2.Content;
 import org.jdom2.Document;
@@ -7,6 +8,7 @@ import org.jdom2.Element;
 import org.jdom2.input.SAXBuilder;
 import org.jdom2.input.sax.XMLReaderSAX2Factory;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
@@ -14,6 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 /**
  * @author Aluis Marte on 11/5/2021.
  */
+@ExtendWith(TimeExtension.class)
 class SecurityCaseTest {
 
     private final SecurityCase securityCase = new SecurityCase();

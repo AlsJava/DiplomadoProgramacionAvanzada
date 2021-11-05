@@ -1,8 +1,10 @@
 package edu.aluismarte.diplomado.code;
 
 import edu.aluismarte.diplomado.utils.Data;
+import edu.aluismarte.diplomado.utils.TimeExtension;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.time.LocalDate;
 import java.time.Month;
@@ -12,6 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 /**
  * @author Aluis Marte on 11/5/2021.
  */
+@ExtendWith(TimeExtension.class)
 class OptimizeCode2Test {
 
     private final OptimizeCode2 optimizeCode = new OptimizeCode2();
