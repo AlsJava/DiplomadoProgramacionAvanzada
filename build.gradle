@@ -1,7 +1,6 @@
 plugins {
-    id "org.springframework.boot" version "2.5.5"
+    id "org.springframework.boot" version "2.5.6"
     id "io.spring.dependency-management" version "1.0.11.RELEASE"
-//    id "com.vaadin" version "0.14.6.0"
     id "java"
 }
 
@@ -18,33 +17,29 @@ repositories {
     mavenCentral()
 }
 
-//ext {
-//    set("vaadinVersion", "14.7.1")
-//}
-
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-logging:2.5.5'
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.5.5'
-    implementation 'org.springframework.boot:spring-boot-starter-web:2.5.5'
-//    implementation 'com.vaadin:vaadin-spring-boot-starter:21.0.2'
+    implementation 'org.springframework.boot:spring-boot-starter-logging:2.5.6'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.5.6'
+    implementation 'org.springframework.boot:spring-boot-starter-web:2.5.6'
 
     runtimeOnly 'com.h2database:h2:1.4.200'
+
+    implementation "org.owasp.encoder:encoder:1.2.3"
+    implementation "org.jdom:jdom2:2.0.6"
+    implementation "xerces:xerces:2.4.0"
+    implementation "jaxen:jaxen:1.2.0"
+    implementation 'xerces:xercesImpl:2.12.0'
 
     compileOnly "org.projectlombok:lombok:1.18.22"
     annotationProcessor "org.projectlombok:lombok:1.18.22"
 
-    implementation "org.springframework.boot:spring-boot-starter:2.5.5"
-    testImplementation 'org.springframework.boot:spring-boot-starter-test:2.5.5'
+    implementation 'org.springframework.boot:spring-boot-starter:2.5.6'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test:2.5.6'
 
 //    testImplementation "org.junit.jupiter:junit-jupiter-api:5.8.1"
 //    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:5.8.1"
 }
 
-//dependencyManagement {
-//    imports {
-//        mavenBom "com.vaadin:vaadin-bom:${vaadinVersion}"
-//    }
-//}
 
 test {
     useJUnitPlatform()

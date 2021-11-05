@@ -1,12 +1,10 @@
 package edu.aluismarte.diplomado.code;
 
-import edu.aluismarte.diplomado.utils.Data;
 import edu.aluismarte.diplomado.model.Holiday;
+import edu.aluismarte.diplomado.utils.Data;
 
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
 /**
@@ -15,8 +13,6 @@ import java.util.stream.Collectors;
  * Created by Aluis on 10/18/2021.
  */
 public class OptimizeCode {
-
-    private static final Map<LocalDate, Integer> LABOR_DAYS = new ConcurrentHashMap<>();
 
     public LocalDate calculateDueDateNoMemory(LocalDate startDate, int daysToWait) {
         List<Holiday> holidays = getHolidays(startDate, startDate.plusDays(daysToWait * 3L)); // Find 3 times days on holidays then workdays
@@ -53,25 +49,6 @@ public class OptimizeCode {
         return result;
     }
 
-    public LocalDate calculateDueDateWithMemory(LocalDate startDate, int daysToWait) {
-        List<Holiday> holidays = getHolidays(startDate, startDate.plusDays(daysToWait * 3L)); // Find 3 times days on holidays then workdays
-        return calculateDueDateWithMemory(holidays, startDate, daysToWait);
-    }
-
-    public LocalDate calculateDueDateWithMemory(List<Holiday> holidays, LocalDate startDate, int daysToWait) {
-        LocalDate result = startDate; // Its immutable data type
-        int laborDays = 0;
-        while (true) {
-            laborDays += getIsLaborDay(holidays, result);
-            if (laborDays < daysToWait) {
-                result = result.plusDays(1);
-            } else {
-                break;
-            }
-        }
-        return result;
-    }
-
     private boolean isHoliday(List<Holiday> holidays, LocalDate date) {
         return holidays.stream().anyMatch(holiday -> holiday.getDate().isEqual(date));
     }
@@ -80,25 +57,5 @@ public class OptimizeCode {
         return Data.HOLIDAYS.stream()
                 .filter(holiday -> holiday.getDate().compareTo(startDate) >= 0 && holiday.getDate().compareTo(endDate) <= 0)
                 .collect(Collectors.toList());
-    }
-
-    private int getIsLaborDay(List<Holiday> holidays, LocalDate dateToFind) {
-        return LABOR_DAYS.computeIfAbsent(dateToFind, date -> {
-            if (holidays.stream().anyMatch(holiday -> holiday.getDate().isEqual(date))) {
-                return 0;
-            }
-            switch (date.getDayOfWeek()) {
-                case MONDAY:
-                case TUESDAY:
-                case WEDNESDAY:
-                case THURSDAY:
-                case FRIDAY:
-                    return 1;
-                case SATURDAY:
-                case SUNDAY:
-                default:
-                    return 0;
-            }
-        });
     }
 }
