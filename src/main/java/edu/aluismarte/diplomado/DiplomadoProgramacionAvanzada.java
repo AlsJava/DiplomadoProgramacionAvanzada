@@ -7,9 +7,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * Created by Aluis on 10/17/2021.
  */
 @SpringBootApplication
-public class DiplomadoProgramacionAvanzada2021 {
+public class DiplomadoProgramacionAvanzada {
 
     public static void main(String[] args) {
-        SpringApplication.run(DiplomadoProgramacionAvanzada2021.class, args);
+        SpringApplication.run(DiplomadoProgramacionAvanzada.class, args);
     }
 }
