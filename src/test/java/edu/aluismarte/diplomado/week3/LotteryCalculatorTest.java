@@ -90,4 +90,12 @@ public class LotteryCalculatorTest {
         }
     }
 
+    // TODO Uncomment me to cover 100%
+//    @Test
+//    void invalidPlay() {
+//        TicketPlay ticketPlay = TicketPlay.builder().play(PLAY_1 + PLAY_2 + PLAY_3).amount(new BigDecimal(50)).build();
+//        PlayResult playResult = lotteryCalculator.calculateTicketPlay(SIMPLE_WINNER_NUMBERS, ticketPlay);
+//        assertNull(playResult);
+//    }
+
 }
