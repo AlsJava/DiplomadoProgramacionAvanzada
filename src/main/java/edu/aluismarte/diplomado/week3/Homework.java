@@ -34,7 +34,7 @@ import java.util.List;
  * @author aluis on 3/26/2022.
  * @implNote Hacer test que cubran el 100% del código y tengan escenarios complejos
  */
-public class Homework1 {
+public class Homework {
 
     public List<Quote> calculateQuotes(Loan loan) {
         if (loan == null) {

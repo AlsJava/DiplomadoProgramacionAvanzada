@@ -1,6 +1,6 @@
 plugins {
-    id "org.springframework.boot" version "2.6.5"
-    id "io.spring.dependency-management" version "1.0.11.RELEASE"
+//    id "org.springframework.boot" version "2.6.5"
+//    id "io.spring.dependency-management" version "1.0.11.RELEASE"
     id "java"
 }
 
@@ -22,14 +22,6 @@ repositories {
 }
 
 dependencies {
-    implementation("org.springframework.boot:spring-boot-starter")
-    implementation("org.springframework.boot:spring-boot-starter-web")
-    implementation("org.springframework.boot:spring-boot-starter-logging")
-    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-    developmentOnly("org.springframework.boot:spring-boot-devtools")
-
-    runtimeOnly ("com.h2database:h2:2.1.210")
-
     implementation ("org.owasp.encoder:encoder:1.2.3")
     implementation ('org.jdom:jdom2:2.0.6.1')
     implementation ("xerces:xerces:2.4.0")
@@ -40,7 +32,10 @@ dependencies {
     compileOnly("org.projectlombok:lombok:$lombok_version")
     annotationProcessor("org.projectlombok:lombok:$lombok_version")
 
-    testImplementation ("org.springframework.boot:spring-boot-starter-test")
+    implementation ("org.slf4j:slf4j-simple:1.7.36")
+
+    testImplementation ('org.junit.jupiter:junit-jupiter-api:5.8.2')
+    testRuntimeOnly ('org.junit.jupiter:junit-jupiter-engine:5.8.2')
 }
 
 
