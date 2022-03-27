@@ -1,4 +1,4 @@
-package edu.aluismarte.diplomado.code.alg;
+package edu.aluismarte.diplomado.week2.alg;
 
 /**
  * Created by Aluis on 10/25/2021.

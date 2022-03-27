@@ -1,4 +1,4 @@
-package edu.aluismarte.diplomado.code;
+package edu.aluismarte.diplomado.week2.structure;
 
 import edu.aluismarte.diplomado.model.Holiday;
 import edu.aluismarte.diplomado.utils.Data;

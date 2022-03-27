@@ -1,6 +1,8 @@
-package edu.aluismarte.diplomado.code;
+package edu.aluismarte.diplomado.week2;
 
 /**
+ * Los comentarios compilan?
+ *
  * @author Aluis Marte on 11/5/2021.
  */
 public class JavaComments {

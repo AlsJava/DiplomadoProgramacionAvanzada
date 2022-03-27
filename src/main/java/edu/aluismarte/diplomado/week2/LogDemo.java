@@ -1,4 +1,4 @@
-package edu.aluismarte.diplomado.utils;
+package edu.aluismarte.diplomado.week2;
 
 import lombok.NoArgsConstructor;
 import org.slf4j.Logger;
@@ -7,6 +7,8 @@ import org.slf4j.LoggerFactory;
 import java.security.SecureRandom;
 
 /**
+ * Uso de logs
+ * <p>
  * Created by Aluis on 10/17/2021.
  */
 @NoArgsConstructor
