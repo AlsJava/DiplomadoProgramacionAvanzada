@@ -1,4 +1,4 @@
-package edu.aluismarte.diplomado.other;
+package edu.aluismarte.diplomado.week2;
 
 import org.junit.jupiter.api.Test;
 

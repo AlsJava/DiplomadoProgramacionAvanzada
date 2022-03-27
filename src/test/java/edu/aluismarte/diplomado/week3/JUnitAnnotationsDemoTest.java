@@ -1,4 +1,4 @@
-package edu.aluismarte.diplomado;
+package edu.aluismarte.diplomado.week3;
 
 import org.junit.jupiter.api.*;
 
@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * Created by Aluis on 10/18/2021.
  */
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class DemoTest {
+public class JUnitAnnotationsDemoTest {
 
     public static final String PRODUCTION_TAG = "Production";
     public static final String DEVELOP_TAG = "Develop";
@@ -52,5 +52,21 @@ public class DemoTest {
     void firstTest() {
         System.out.println("Test 1");
         assertEquals("", "");
+    }
+
+    @Nested
+    class MyNestedTest {
+
+        @Order(3)
+        @Tags({
+                @Tag(PRODUCTION_TAG),
+                @Tag(DEVELOP_TAG)
+        })
+        @DisplayName("Demo para estudiantes nested")
+        @Test
+        void firstTest() {
+            System.out.println("Test 3");
+            assertEquals("", "");
+        }
     }
 }
