@@ -2,7 +2,6 @@ package edu.aluismarte.diplomado.week2.structure;
 
 import edu.aluismarte.diplomado.utils.Data;
 import edu.aluismarte.diplomado.utils.TimeExtension;
-import edu.aluismarte.diplomado.week2.structure.OptimizeCode;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

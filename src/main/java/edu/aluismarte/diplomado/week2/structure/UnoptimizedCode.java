@@ -1,7 +1,7 @@
 package edu.aluismarte.diplomado.week2.structure;
 
-import edu.aluismarte.diplomado.utils.Data;
 import edu.aluismarte.diplomado.model.Holiday;
+import edu.aluismarte.diplomado.utils.Data;
 
 import java.time.LocalDate;
 import java.util.Calendar;
@@ -16,43 +16,28 @@ import java.util.stream.Collectors;
  */
 public class UnoptimizedCode {
 
-    public Date calculateDueDate(Date startDate, int daysToWait) {
+    /**
+     * @param startDate Date to start to count
+     * @param vacation  Number of vacation days
+     * @return Return date to office
+     */
+    public Date calculateDueDate(Date startDate, int vacation) {
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(startDate);
-        for (int i = 0; i < daysToWait; i++) {
+        for (int i = 0; i < vacation; i++) {
             switch (calendar.get(Calendar.DAY_OF_WEEK)) {
-                case Calendar.MONDAY:
-                case Calendar.TUESDAY:
-                case Calendar.WEDNESDAY:
-                case Calendar.THURSDAY:
-                case Calendar.FRIDAY:
-                    calendar.add(Calendar.DATE, 1);
-                    break;
-                case Calendar.SATURDAY:
-                    calendar.add(Calendar.DATE, 2);
-                    break;
-                case Calendar.SUNDAY:
-                    calendar.add(Calendar.DATE, 1);
-                    break;
+                case Calendar.MONDAY, Calendar.TUESDAY, Calendar.WEDNESDAY, Calendar.THURSDAY, Calendar.FRIDAY -> calendar.add(Calendar.DATE, 1);
+                case Calendar.SATURDAY -> calendar.add(Calendar.DATE, 2);
+                case Calendar.SUNDAY -> calendar.add(Calendar.DATE, 1);
             }
         }
         List<Holiday> holidays = getHolidays(calendar.getTime()); // Find holidays to this date
         for (Holiday holiDay : holidays) {
             LocalDate holyDate = holiDay.getDate();
             switch (holyDate.getDayOfWeek()) {
-                case MONDAY:
-                case TUESDAY:
-                case WEDNESDAY:
-                case THURSDAY:
-                case FRIDAY:
-                    calendar.add(Calendar.DATE, 1);
-                    break;
-                case SATURDAY:
-                    calendar.add(Calendar.DATE, 1);
-                    break;
-                case SUNDAY:
-                    calendar.add(Calendar.DATE, 2);
-                    break;
+                case MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY -> calendar.add(Calendar.DATE, 1);
+                case SATURDAY -> calendar.add(Calendar.DATE, 1);
+                case SUNDAY -> calendar.add(Calendar.DATE, 2);
             }
         }
         return calendar.getTime();

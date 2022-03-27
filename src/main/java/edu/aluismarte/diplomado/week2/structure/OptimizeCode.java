@@ -14,12 +14,17 @@ import java.util.stream.Collectors;
  */
 public class OptimizeCode {
 
-    public LocalDate calculateDueDateNoMemory(LocalDate startDate, int daysToWait) {
-        List<Holiday> holidays = getHolidays(startDate, startDate.plusDays(daysToWait * 3L)); // Find 3 times days on holidays then workdays
-        return calculateDueDateNoMemory(holidays, startDate, daysToWait);
+    /**
+     * @param startDate Date to start to count
+     * @param vacation  Number of vacation days
+     * @return Return date to office
+     */
+    public LocalDate calculateDueDateNoMemory(LocalDate startDate, int vacation) {
+        List<Holiday> holidays = getHolidays(startDate, startDate.plusDays(vacation * 3L)); // Find 3 times days on holidays then workdays
+        return calculateDueDateNoMemory(holidays, startDate, vacation);
     }
 
-    public LocalDate calculateDueDateNoMemory(List<Holiday> holidays, LocalDate startDate, int daysToWait) {
+    public LocalDate calculateDueDateNoMemory(List<Holiday> holidays, LocalDate startDate, int vacation) {
         LocalDate result = startDate; // Its immutable data type
         int laborDays = 0;
         while (true) {
@@ -40,7 +45,7 @@ public class OptimizeCode {
                         break;
                 }
             }
-            if (laborDays < daysToWait) {
+            if (laborDays < vacation) {
                 result = result.plusDays(1);
             } else {
                 break;

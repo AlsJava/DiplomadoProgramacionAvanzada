@@ -22,15 +22,15 @@ public class CodeSpeed {
 
     /**
      * Obtengo la potencia usando la forma rápida
-     *
+     * <p>
      * Se puede pensar
-     *
+     * <p>
      * 2^8
      * 2 * 2 * 2 * 2 * 2 * 2 * 2 * 2 =
      * 4 * 4 * 4 * 4 =
      * 16 * 16 =
      * 256
-     *
+     * <p>
      * 2 * 2 * 2 * 2 * 2 * 2 * 2 * 2 =
      * 4 * 2 * 2 * 2 * 2 * 2 * 2 =
      * 8 * 2 * 2 * 2 * 2 * 2 =
@@ -40,7 +40,7 @@ public class CodeSpeed {
      * 128 * 2 =
      * 256
      *
-     * @param n base
+     * @param n     base
      * @param power Potencia
      * @return n^power
      */

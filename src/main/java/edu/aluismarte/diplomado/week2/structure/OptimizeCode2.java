@@ -18,17 +18,22 @@ public class OptimizeCode2 {
 
     private static final Map<LocalDate, Integer> LABOR_DAYS = new ConcurrentHashMap<>();
 
-    public LocalDate calculateDueDateWithMemory(LocalDate startDate, int daysToWait) {
-        List<Holiday> holidays = getHolidays(startDate, startDate.plusDays(daysToWait * 3L)); // Find 3 times days on holidays then workdays
-        return calculateDueDateWithMemory(holidays, startDate, daysToWait);
+    /**
+     * @param startDate Date to start to count
+     * @param vacation  Number of vacation days
+     * @return Return date to office
+     */
+    public LocalDate calculateDueDateWithMemory(LocalDate startDate, int vacation) {
+        List<Holiday> holidays = getHolidays(startDate, startDate.plusDays(vacation * 3L)); // Find 3 times days on holidays then workdays
+        return calculateDueDateWithMemory(holidays, startDate, vacation);
     }
 
-    public LocalDate calculateDueDateWithMemory(List<Holiday> holidays, LocalDate startDate, int daysToWait) {
+    public LocalDate calculateDueDateWithMemory(List<Holiday> holidays, LocalDate startDate, int vacation) {
         LocalDate result = startDate; // Its immutable data type
         int laborDays = 0;
         while (true) {
             laborDays += getIsLaborDay(holidays, result);
-            if (laborDays < daysToWait) {
+            if (laborDays < vacation) {
                 result = result.plusDays(1);
             } else {
                 break;
@@ -48,18 +53,10 @@ public class OptimizeCode2 {
             if (holidays.stream().anyMatch(holiday -> holiday.getDate().isEqual(date))) {
                 return 0;
             }
-            switch (date.getDayOfWeek()) {
-                case MONDAY:
-                case TUESDAY:
-                case WEDNESDAY:
-                case THURSDAY:
-                case FRIDAY:
-                    return 1;
-                case SATURDAY:
-                case SUNDAY:
-                default:
-                    return 0;
-            }
+            return switch (date.getDayOfWeek()) {
+                case MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY -> 1;
+                case SATURDAY, SUNDAY -> 0;
+            };
         });
     }
 }

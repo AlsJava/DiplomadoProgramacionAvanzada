@@ -2,4 +2,4 @@
 <!DOCTYPE foo [
         <!ELEMENT foo ANY >
         <!ENTITY xxe SYSTEM "file:///c:/Develop/demo.txt" >]>
-        <foo>&xxe;</foo>
+<foo>&xxe;</foo>
