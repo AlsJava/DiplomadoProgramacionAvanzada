@@ -1,9 +1,9 @@
 package edu.aluismarte.diplomado.week3;
 
-import edu.aluismarte.diplomado.model.FrequencyType;
-import edu.aluismarte.diplomado.model.Loan;
-import edu.aluismarte.diplomado.model.LoanType;
-import edu.aluismarte.diplomado.model.Quote;
+import edu.aluismarte.diplomado.model.week3.FrequencyType;
+import edu.aluismarte.diplomado.model.week3.Loan;
+import edu.aluismarte.diplomado.model.week3.LoanType;
+import edu.aluismarte.diplomado.model.week3.Quote;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

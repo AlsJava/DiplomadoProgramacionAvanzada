@@ -1,4 +1,4 @@
-package edu.aluismarte.diplomado.model;
+package edu.aluismarte.diplomado.model.week3;
 
 /**
  * FIXED: Es un monto a pagar en cada cuota fijo.

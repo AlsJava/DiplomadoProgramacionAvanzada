@@ -1,4 +1,4 @@
-package edu.aluismarte.diplomado.model;
+package edu.aluismarte.diplomado.model.week3;
 
 import lombok.*;
 
@@ -12,8 +12,8 @@ import java.math.BigDecimal;
 @Builder
 @Getter
 @Setter
-public class PlayResult {
+public class TicketPlay {
 
-    private String combination;
+    private String play;
     private BigDecimal amount;
 }

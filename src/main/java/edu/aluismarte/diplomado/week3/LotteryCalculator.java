@@ -1,8 +1,8 @@
 package edu.aluismarte.diplomado.week3;
 
-import edu.aluismarte.diplomado.model.PlayResult;
-import edu.aluismarte.diplomado.model.TicketPlay;
-import edu.aluismarte.diplomado.model.WinnerNumber;
+import edu.aluismarte.diplomado.model.week3.PlayResult;
+import edu.aluismarte.diplomado.model.week3.TicketPlay;
+import edu.aluismarte.diplomado.model.week3.WinnerNumber;
 
 import java.math.BigDecimal;
 import java.util.List;

@@ -1,8 +1,8 @@
 package edu.aluismarte.diplomado.week3;
 
-import edu.aluismarte.diplomado.model.PlayResult;
-import edu.aluismarte.diplomado.model.TicketPlay;
-import edu.aluismarte.diplomado.model.WinnerNumber;
+import edu.aluismarte.diplomado.model.week3.PlayResult;
+import edu.aluismarte.diplomado.model.week3.TicketPlay;
+import edu.aluismarte.diplomado.model.week3.WinnerNumber;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 

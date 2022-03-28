@@ -1,6 +1,6 @@
 package edu.aluismarte.diplomado.week2.structure;
 
-import edu.aluismarte.diplomado.model.Holiday;
+import edu.aluismarte.diplomado.model.week2.Holiday;
 import edu.aluismarte.diplomado.utils.Data;
 
 import java.time.LocalDate;

@@ -1,4 +1,4 @@
-package edu.aluismarte.diplomado.model;
+package edu.aluismarte.diplomado.model.week2;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
