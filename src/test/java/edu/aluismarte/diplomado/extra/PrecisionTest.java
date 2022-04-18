@@ -1,0 +1,17 @@
+package edu.aluismarte.diplomado.extra;
+
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+public class PrecisionTest {
+
+    @Test
+    void precisionProblemOnDoubleTest() {
+        double a = 0.1;
+        double b = 0.2;
+        double result = a + b;
+        System.out.println("A+B=0.3? or is: " + result);
+        assertFalse(result == 0.3); // Why false?
+    }
+}
