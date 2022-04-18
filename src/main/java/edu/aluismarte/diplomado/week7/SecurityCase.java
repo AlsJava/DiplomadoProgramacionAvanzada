@@ -1,4 +1,4 @@
-package edu.aluismarte.diplomado.code;
+package edu.aluismarte.diplomado.week7;
 
 import org.apache.xerces.parsers.SAXParser;
 import org.jdom2.Document;
