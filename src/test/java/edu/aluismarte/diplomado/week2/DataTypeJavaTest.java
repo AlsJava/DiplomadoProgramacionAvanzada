@@ -2,6 +2,7 @@ package edu.aluismarte.diplomado.week2;
 
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
@@ -28,6 +29,6 @@ public class DataTypeJavaTest {
     void integerNotEqualTest() {
         Integer a = 128;
         Integer b = 128;
-        assertTrue(a == b, "No equals, what?!");
+        assertFalse(a == b, "No equals, what?!");
     }
 }

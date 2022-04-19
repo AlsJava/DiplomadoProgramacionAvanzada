@@ -2,7 +2,6 @@ package edu.aluismarte.diplomado.week2.structure;
 
 import edu.aluismarte.diplomado.utils.Data;
 import edu.aluismarte.diplomado.utils.TimeExtension;
-import edu.aluismarte.diplomado.week2.structure.OptimizeCode2;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -32,21 +31,21 @@ class OptimizeCode2Test {
     void noHolidaysTest() {
         LocalDate startDate = LocalDate.of(2021, Month.JANUARY, 1);
         LocalDate localDate = optimizeCode.calculateDueDateWithMemory(startDate, 2);
-        assertEquals(LocalDate.of(2021, Month.JANUARY, 4), localDate);
+        assertEquals(LocalDate.of(2021, Month.JANUARY, 5), localDate);
     }
 
     @Test
     void startWeekendTest() {
         LocalDate startDate = LocalDate.of(2021, Month.JANUARY, 2);
         LocalDate localDate = optimizeCode.calculateDueDateWithMemory(Data.HOLIDAYS, startDate, 1);
-        assertEquals(LocalDate.of(2021, Month.JANUARY, 4), localDate);
+        assertEquals(LocalDate.of(2021, Month.JANUARY, 5), localDate);
     }
 
     @Test
     void twoHolidaysTogetherTest() {
         LocalDate startDate = LocalDate.of(2021, Month.JANUARY, 1);
         LocalDate localDate = optimizeCode.calculateDueDateWithMemory(Data.HOLIDAYS, startDate, 4);
-        assertEquals(LocalDate.of(2021, Month.JANUARY, 8), localDate);
+        assertEquals(LocalDate.of(2021, Month.JANUARY, 11), localDate);
     }
 
 }

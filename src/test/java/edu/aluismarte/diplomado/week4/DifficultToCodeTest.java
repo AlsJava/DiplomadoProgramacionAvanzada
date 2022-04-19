@@ -2,10 +2,7 @@ package edu.aluismarte.diplomado.week4;
 
 import edu.aluismarte.diplomado.model.week4.User;
 import edu.aluismarte.diplomado.utils.DBSimulator;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import lombok.Setter;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;

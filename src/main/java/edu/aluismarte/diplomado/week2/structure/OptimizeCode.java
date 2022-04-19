@@ -45,7 +45,7 @@ public class OptimizeCode {
                         break;
                 }
             }
-            if (laborDays < vacation) {
+            if (laborDays <= vacation) {
                 result = result.plusDays(1);
             } else {
                 break;

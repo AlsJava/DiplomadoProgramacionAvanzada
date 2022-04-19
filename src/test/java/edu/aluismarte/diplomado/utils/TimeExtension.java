@@ -29,7 +29,7 @@ public class TimeExtension implements BeforeTestExecutionCallback, AfterTestExec
         Method testMethod = context.getRequiredTestMethod();
         long startTimeNS = getStore(context).remove(START_TIME_NS, long.class);
         double durationNS = System.nanoTime() - startTimeNS;
-        logger.info("Method [{}] took {} ms.", testMethod.getName(),  durationNS / 1000000);
+        logger.info("Method [{}] took {} ms.", testMethod.getName(), durationNS / 1000000);
     }
 
     private Store getStore(ExtensionContext context) {

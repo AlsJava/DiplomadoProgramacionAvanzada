@@ -26,7 +26,8 @@ public class UnoptimizedCode {
         calendar.setTime(startDate);
         for (int i = 0; i < vacation; i++) {
             switch (calendar.get(Calendar.DAY_OF_WEEK)) {
-                case Calendar.MONDAY, Calendar.TUESDAY, Calendar.WEDNESDAY, Calendar.THURSDAY, Calendar.FRIDAY -> calendar.add(Calendar.DATE, 1);
+                case Calendar.MONDAY, Calendar.TUESDAY, Calendar.WEDNESDAY, Calendar.THURSDAY, Calendar.FRIDAY ->
+                        calendar.add(Calendar.DATE, 1);
                 case Calendar.SATURDAY -> calendar.add(Calendar.DATE, 2);
                 case Calendar.SUNDAY -> calendar.add(Calendar.DATE, 1);
             }

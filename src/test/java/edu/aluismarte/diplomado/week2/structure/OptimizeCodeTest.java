@@ -33,21 +33,21 @@ class OptimizeCodeTest {
     void noHolidaysTest() {
         LocalDate startDate = LocalDate.of(2021, Month.JANUARY, 1);
         LocalDate localDate = optimizeCode.calculateDueDateNoMemory(startDate, 2);
-        assertEquals(LocalDate.of(2021, Month.JANUARY, 4), localDate);
+        assertEquals(LocalDate.of(2021, Month.JANUARY, 5), localDate);
     }
 
     @Test
     void startWeekendTest() {
         LocalDate startDate = LocalDate.of(2021, Month.JANUARY, 2);
         LocalDate localDate = optimizeCode.calculateDueDateNoMemory(Data.HOLIDAYS, startDate, 1);
-        assertEquals(LocalDate.of(2021, Month.JANUARY, 4), localDate);
+        assertEquals(LocalDate.of(2021, Month.JANUARY, 5), localDate);
     }
 
     @Test
     void twoHolidaysTogetherTest() {
         LocalDate startDate = LocalDate.of(2021, Month.JANUARY, 1);
         LocalDate localDate = optimizeCode.calculateDueDateNoMemory(Data.HOLIDAYS, startDate, 4);
-        assertEquals(LocalDate.of(2021, Month.JANUARY, 8), localDate);
+        assertEquals(LocalDate.of(2021, Month.JANUARY, 11), localDate);
     }
 
 }

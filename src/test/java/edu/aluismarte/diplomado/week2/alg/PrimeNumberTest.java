@@ -1,7 +1,6 @@
 package edu.aluismarte.diplomado.week2.alg;
 
 import edu.aluismarte.diplomado.utils.TimeExtension;
-import edu.aluismarte.diplomado.week2.alg.PrimeNumber;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 

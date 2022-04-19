@@ -1,7 +1,6 @@
 package edu.aluismarte.diplomado.week2.structure;
 
 import edu.aluismarte.diplomado.utils.TimeExtension;
-import edu.aluismarte.diplomado.week2.structure.UnoptimizedCode;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
@@ -47,9 +46,10 @@ class UnoptimizedCodeTest {
 
     @Test
     void twoHolidaysTogetherTest() {
+        // Fail test
         LocalDate startDate = LocalDate.of(2021, Month.JANUARY, 1);
         Date date = unoptimizedCode.calculateDueDate(java.sql.Date.valueOf(startDate), 4);
-        assertEquals(LocalDate.of(2021, Month.JANUARY, 8), new java.sql.Date(date.getTime()).toLocalDate());
+        assertEquals(LocalDate.of(2021, Month.JANUARY, 11), new java.sql.Date(date.getTime()).toLocalDate());
     }
 
 }

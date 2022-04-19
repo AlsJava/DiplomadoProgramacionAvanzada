@@ -50,7 +50,8 @@ public class Homework {
             Quote quote = new Quote();
             quote.setDate(last);
             switch (loan.getLoanType()) {
-                case FIXED, SAN -> quote.setAmount(calculateAmount(loan.getLoanType(), loan.getQuotes(), loan.getInterest(), loan.getCapital()));
+                case FIXED, SAN ->
+                        quote.setAmount(calculateAmount(loan.getLoanType(), loan.getQuotes(), loan.getInterest(), loan.getCapital()));
             }
             quotes.add(quote);
         }
@@ -59,8 +60,10 @@ public class Homework {
 
     private BigDecimal calculateAmount(LoanType loanType, int quotes, BigDecimal interest, BigDecimal capitalAmount) {
         return switch (loanType) {
-            case FIXED -> capitalAmount.divide(new BigDecimal(quotes), RoundingMode.CEILING).add(interest).setScale(2, RoundingMode.CEILING);
-            case SAN -> capitalAmount.add(interest).divide(new BigDecimal(quotes), RoundingMode.CEILING).setScale(2, RoundingMode.CEILING);
+            case FIXED ->
+                    capitalAmount.divide(new BigDecimal(quotes), RoundingMode.CEILING).add(interest).setScale(2, RoundingMode.CEILING);
+            case SAN ->
+                    capitalAmount.add(interest).divide(new BigDecimal(quotes), RoundingMode.CEILING).setScale(2, RoundingMode.CEILING);
         };
     }
 

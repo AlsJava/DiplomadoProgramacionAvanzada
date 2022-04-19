@@ -33,7 +33,7 @@ public class OptimizeCode2 {
         int laborDays = 0;
         while (true) {
             laborDays += getIsLaborDay(holidays, result);
-            if (laborDays < vacation) {
+            if (laborDays <= vacation) {
                 result = result.plusDays(1);
             } else {
                 break;

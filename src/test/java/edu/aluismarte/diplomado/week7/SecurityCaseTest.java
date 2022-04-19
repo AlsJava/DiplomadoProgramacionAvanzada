@@ -1,7 +1,6 @@
 package edu.aluismarte.diplomado.week7;
 
 import edu.aluismarte.diplomado.utils.TimeExtension;
-import edu.aluismarte.diplomado.week7.SecurityCase;
 import org.apache.xerces.parsers.SAXParser;
 import org.jdom2.Content;
 import org.jdom2.Document;
