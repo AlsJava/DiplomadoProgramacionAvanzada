@@ -5,6 +5,7 @@ import edu.aluismarte.diplomado.utils.DBSimulator;
 import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.Test;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.Writer;
 
@@ -18,6 +19,8 @@ public class DifficultToCodeTest {
     @Test
     void calculateUserAgeOnDaysTest() {
         difficultToCode.writeUserName("1"); // What can i test?
+        File file = new File("user.txt");
+        file.deleteOnExit();
     }
 
     @RequiredArgsConstructor
