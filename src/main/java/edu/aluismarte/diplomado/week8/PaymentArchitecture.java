@@ -9,4 +9,6 @@ public class PaymentArchitecture {
     // Lo hago usando la referencia de SOLID
     // Preparo un factory que se encargue de las operaciones.
 
+    // Los sistemas de pago a simular, serán Paypal y Stripe
+
 }
