@@ -1,5 +1,7 @@
 package edu.aluismarte.diplomado.week2;
 
+import edu.aluismarte.diplomado.model.week2.Holiday;
+
 import java.time.DayOfWeek;
 import java.util.Date;
 import java.util.List;
@@ -12,7 +14,7 @@ import java.util.List;
  */
 public class Homework {
 
-    public Date calculateDueDate(List<DayOfWeek> laborDays, Date startDate, int vacation) {
+    public Date calculateDueDate(List<DayOfWeek> laborDays,List<Holiday> holidays, Date startDate, int vacation) {
         // Implement
         return null;
     }
