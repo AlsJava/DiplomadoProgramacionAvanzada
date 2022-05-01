@@ -15,6 +15,8 @@ import java.util.List;
 public class Homework {
 
     /**
+     * Hacer una implementación propia basado en los ejemplos explicados en clase.
+     *
      * @param laborDays Los dias que son laborables, es decir, podemos trabajar de lunes a viernes, de lunes a sábado, o la semana entera, o solo 3 dias a la semana
      * @param holidays  Todos los dias feriados que serán relevantes para el cálculo, tomar en cuenta diciembre para esto, puede que necesites los feriados del año siguiente
      * @param startDate Fecha de inicio para calcular las vacaciones, esta fecha es incluyente, es decir, desde aquí se inicia la vacación
