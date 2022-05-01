@@ -26,6 +26,7 @@ public class LogDemo {
             double c = a * b;
 
             System.out.printf("AxB is equals to %s%n", c);
+            logger.info("AxB is equals to {}", c);
 
             throw new Exception("Hello Exception");
         } catch (Exception ex) {
