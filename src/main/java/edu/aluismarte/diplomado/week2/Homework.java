@@ -14,7 +14,7 @@ import java.util.List;
  */
 public class Homework {
 
-    public Date calculateDueDate(List<DayOfWeek> laborDays,List<Holiday> holidays, Date startDate, int vacation) {
+    public Date calculateDueDate(List<DayOfWeek> laborDays, List<Holiday> holidays, Date startDate, int vacation) {
         // Implement
         return null;
     }
