@@ -1,4 +1,4 @@
-package edu.aluismarte.diplomado.extra;
+package edu.aluismarte.diplomado.week7;
 
 import org.junit.jupiter.api.Test;
 
@@ -12,6 +12,6 @@ public class PrecisionTest {
         double b = 0.2;
         double result = a + b;
         System.out.println("A+B=0.3? or is: " + result);
-        assertFalse(result == 0.3); // Why false?
+        assertFalse(result == 0.3); // TODO Why false?
     }
 }
