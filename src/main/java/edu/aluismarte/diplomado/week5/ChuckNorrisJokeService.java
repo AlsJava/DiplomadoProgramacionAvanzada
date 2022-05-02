@@ -25,12 +25,8 @@ public class ChuckNorrisJokeService {
         Request request = new Request.Builder()
                 .url(CHUCK_NORRIS_IO_URL + "/random")
                 .build();
-
-        Call call = client.newCall(request);
         try {
-            Response response = call.execute();
-            String json = response.body().string();
-            return objectMapper.readValue(json, ChuckNorrisJoke.class);
+            return objectMapper.readValue(sendRequest(request), ChuckNorrisJoke.class);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -47,12 +43,8 @@ public class ChuckNorrisJokeService {
         Request request = new Request.Builder()
                 .url(urlBuilder.build().toString())
                 .build();
-
-        Call call = client.newCall(request);
         try {
-            Response response = call.execute();
-            String json = response.body().string();
-            return objectMapper.readValue(json, ChuckNorrisJoke.class);
+            return objectMapper.readValue(sendRequest(request), ChuckNorrisJoke.class);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -69,12 +61,8 @@ public class ChuckNorrisJokeService {
         Request request = new Request.Builder()
                 .url(urlBuilder.build().toString())
                 .build();
-
-        Call call = client.newCall(request);
         try {
-            Response response = call.execute();
-            String json = response.body().string();
-            return objectMapper.readValue(json, SearchChuckNorrisJoke.class);
+            return objectMapper.readValue(sendRequest(request), SearchChuckNorrisJoke.class);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -84,16 +72,25 @@ public class ChuckNorrisJokeService {
         Request request = new Request.Builder()
                 .url(CHUCK_NORRIS_IO_URL + "/categories")
                 .build();
-
-        Call call = client.newCall(request);
         try {
-            Response response = call.execute();
-            String json = response.body().string();
-            return objectMapper.readerForListOf(String.class).readValue(json);
+            return objectMapper.readerForListOf(String.class).readValue(sendRequest(request));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
 
+    private String sendRequest(Request request) {
+        Call call = client.newCall(request);
+        try {
+            Response response = call.execute();
+            ResponseBody body = response.body();
+            if (body == null) {
+                return null;
+            }
+            return body.string();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 }
