@@ -8,7 +8,12 @@ import java.math.BigDecimal;
 import java.util.List;
 
 /**
+ * Implementación simplificada de cálculo de lotería para quiniela y pale.
+ * <p>
+ * Por razones de simpleza no se calculan las tripletas, ya que es demostrativo para test
+ *
  * @author aluis on 3/26/2022.
+ * @implNote Esta basado en los juegos de lotería en República Dominicana
  */
 public class LotteryCalculator {
 

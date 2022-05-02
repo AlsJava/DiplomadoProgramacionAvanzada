@@ -21,7 +21,11 @@ public class LotteryCalculatorTest {
     private static final String PLAY_2 = "20";
     private static final String PLAY_3 = "50";
 
-    private static final List<WinnerNumber> SIMPLE_WINNER_NUMBERS = List.of(new WinnerNumber("1", PLAY_1), new WinnerNumber("2", PLAY_2), new WinnerNumber("3", PLAY_3));
+    private static final List<WinnerNumber> SIMPLE_WINNER_NUMBERS = List.of(
+            new WinnerNumber("1", PLAY_1),
+            new WinnerNumber("2", PLAY_2),
+            new WinnerNumber("3", PLAY_3)
+    );
 
     private final LotteryCalculator lotteryCalculator = new LotteryCalculator();
 

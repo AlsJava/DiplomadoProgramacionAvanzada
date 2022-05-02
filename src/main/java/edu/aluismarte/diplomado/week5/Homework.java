@@ -3,7 +3,9 @@ package edu.aluismarte.diplomado.week5;
 import java.util.List;
 
 /**
- * Como probar estos métodos?
+ * ¿Como probar estos métodos?
+ *
+ * Hacer los test principalmente de los métodos privados
  *
  * @author aluis on 4/3/2022.
  */

@@ -7,13 +7,13 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 /**
- * Este código esta mal porque no sigue los principios SOLID y esta muy acoplado al proyecto
+ * Este código está mal porque no sigue los principios SOLID y está muy acoplado al proyecto
  * <p>
- * Que pasa cuando falla?
- * En que archivo escribe?
- * Cual fue el resultado?
+ * ¿Qué pasa cuando falla?
+ * ¿En qué archivo escribe?
+ * ¿Cuál fue el resultado?
  * <p>
- * Para pruebas deberia:
+ * Para pruebas debería:
  * probar cambiar la fuente de datos
  * Redirigir a que archivo escribir el resultado
  * La función debe notificar si realizo bien o no la operación

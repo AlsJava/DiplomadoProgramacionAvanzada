@@ -24,7 +24,7 @@ public class DifficultToCodeTest {
     }
 
     @RequiredArgsConstructor
-    public class Refactory {
+    public static class GoodImplementationTest {
 
         private final DBSimulator dbSimulator;
 

@@ -5,6 +5,8 @@ import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
+ * Demostración general de uso de las annotation más comunes en JUnit cuando se trabaja
+ * <p>
  * Created by Aluis on 10/18/2021.
  */
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
