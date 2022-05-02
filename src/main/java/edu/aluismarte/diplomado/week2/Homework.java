@@ -3,6 +3,7 @@ package edu.aluismarte.diplomado.week2;
 import edu.aluismarte.diplomado.model.week2.Holiday;
 
 import java.time.DayOfWeek;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -24,7 +25,7 @@ public class Homework {
      * @return La fecha que debe retornar el trabajador
      * @implNote El último día de vacación también cuenta, es decir, que regresa el siguiente dia laboral
      */
-    public Date calculateDueDate(List<DayOfWeek> laborDays, List<Holiday> holidays, Date startDate, int vacation) {
+    public LocalDate calculateDueDate(List<DayOfWeek> laborDays, List<Holiday> holidays, LocalDate startDate, int vacation) {
         // Implement
         return null;
     }
