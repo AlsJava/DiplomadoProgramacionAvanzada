@@ -1,5 +1,6 @@
 package edu.aluismarte.diplomado.week1;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -20,7 +21,7 @@ import java.util.List;
 public class Exercise1 {
 
     public static List<String> pairOfSumToTarget(List<Integer> numbers, int target) {
-        return null;
+        return new ArrayList<>();
     }
 
     public static void main(String[] args) {
