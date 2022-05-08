@@ -1,5 +1,6 @@
 package edu.aluismarte.diplomado.week2;
 
+import edu.aluismarte.diplomado.model.week2.Holiday;
 import edu.aluismarte.diplomado.utils.Data;
 import edu.aluismarte.diplomado.utils.TimeExtension;
 import org.junit.jupiter.api.Nested;
@@ -59,7 +60,7 @@ class HomeworkTest {
         void noHolidaysTest() {
             LocalDate startDate = LocalDate.of(2021, Month.JANUARY, 1);
             LocalDate localDate = homework.calculateDueDate(workdays, new ArrayList<>(), startDate, 2);
-            assertEquals(LocalDate.of(2021, Month.JANUARY, 5), localDate);
+            assertEquals(LocalDate.of(2021, Month.JANUARY, 6), localDate);
         }
 
         @Test
@@ -71,10 +72,13 @@ class HomeworkTest {
 
         @Test
         void twoHolidaysTogetherTest() {
-            List<DayOfWeek> workdays = List.of(DayOfWeek.MONDAY, DayOfWeek.MONDAY, DayOfWeek.MONDAY, DayOfWeek.MONDAY, DayOfWeek.MONDAY);
+            List<Holiday> holidays = List.of(
+                    new Holiday("Test 1", LocalDate.of(2021, Month.JANUARY, 12)),
+                    new Holiday("Test 2", LocalDate.of(2021, Month.JANUARY, 13))
+            );
             LocalDate startDate = LocalDate.of(2021, Month.JANUARY, 1);
-            LocalDate localDate = homework.calculateDueDate(workdays, Data.HOLIDAYS, startDate, 4);
-            assertEquals(LocalDate.of(2021, Month.JANUARY, 11), localDate);
+            LocalDate localDate = homework.calculateDueDate(workdays, holidays, startDate, 4);
+            assertEquals(LocalDate.of(2021, Month.JANUARY, 18), localDate);
         }
     }
 
