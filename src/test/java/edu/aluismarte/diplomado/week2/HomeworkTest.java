@@ -48,6 +48,17 @@ class HomeworkTest {
             LocalDate localDate = homework.calculateDueDate(workdays, Data.HOLIDAYS, startDate, 4);
             assertEquals(LocalDate.of(2021, Month.JANUARY, 11), localDate);
         }
+
+        @Test
+        void betweenHolidaysTest() {
+            List<Holiday> holidays = List.of(
+                    new Holiday("Test 1", LocalDate.of(2021, Month.JANUARY, 4)),
+                    new Holiday("Test 1", LocalDate.of(2021, Month.JANUARY, 6))
+            );
+            LocalDate startDate = LocalDate.of(2021, Month.JANUARY, 1);
+            LocalDate localDate = homework.calculateDueDate(workdays, holidays, startDate, 4);
+            assertEquals(LocalDate.of(2021, Month.JANUARY, 11), localDate);
+        }
     }
 
     @Nested
@@ -74,6 +85,17 @@ class HomeworkTest {
             List<Holiday> holidays = List.of(
                     new Holiday("Test 1", LocalDate.of(2021, Month.JANUARY, 12)),
                     new Holiday("Test 2", LocalDate.of(2021, Month.JANUARY, 13))
+            );
+            LocalDate startDate = LocalDate.of(2021, Month.JANUARY, 1);
+            LocalDate localDate = homework.calculateDueDate(workdays, holidays, startDate, 4);
+            assertEquals(LocalDate.of(2021, Month.JANUARY, 18), localDate);
+        }
+
+        @Test
+        void betweenHolidaysTest() {
+            List<Holiday> holidays = List.of(
+                    new Holiday("Test 1", LocalDate.of(2021, Month.JANUARY, 11)),
+                    new Holiday("Test 1", LocalDate.of(2021, Month.JANUARY, 13))
             );
             LocalDate startDate = LocalDate.of(2021, Month.JANUARY, 1);
             LocalDate localDate = homework.calculateDueDate(workdays, holidays, startDate, 4);
