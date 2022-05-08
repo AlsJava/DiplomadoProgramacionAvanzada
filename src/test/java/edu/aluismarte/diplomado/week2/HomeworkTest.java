@@ -44,7 +44,6 @@ class HomeworkTest {
 
         @Test
         void twoHolidaysTogetherTest() {
-            List<DayOfWeek> workdays = List.of(DayOfWeek.MONDAY, DayOfWeek.MONDAY, DayOfWeek.MONDAY, DayOfWeek.MONDAY, DayOfWeek.MONDAY);
             LocalDate startDate = LocalDate.of(2021, Month.JANUARY, 1);
             LocalDate localDate = homework.calculateDueDate(workdays, Data.HOLIDAYS, startDate, 4);
             assertEquals(LocalDate.of(2021, Month.JANUARY, 11), localDate);
