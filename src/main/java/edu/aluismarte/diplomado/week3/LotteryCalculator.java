@@ -12,16 +12,21 @@ import java.util.List;
  * <p>
  * Por razones de simpleza no se calculan las tripletas, ya que es demostrativo para test
  *
+ * Ejemplo de números ganadores (05-10-25)
+ * 05 En primera
+ * 10 En segunda
+ * 25 En tercera
+ *
  * @author aluis on 3/26/2022.
  * @implNote Esta basado en los juegos de lotería en República Dominicana
  */
 public class LotteryCalculator {
 
     public PlayResult calculateTicketPlay(List<WinnerNumber> winnerNumbers, TicketPlay ticketPlay) {
-        if (ticketPlay == null) {
-            return new PlayResult();
-        }
         PlayResult playResult = new PlayResult();
+        if (ticketPlay == null) {
+            return playResult;
+        }
         switch (ticketPlay.getPlay().length()) {
             case 2:
                 for (WinnerNumber winnerNumber : winnerNumbers) {
