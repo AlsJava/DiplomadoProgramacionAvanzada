@@ -26,6 +26,8 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
+    implementation("xalan:xalan:2.7.2") // Probar con otras variantes
+
     implementation("org.owasp.encoder:encoder:1.2.3")
     implementation('org.jdom:jdom2:2.0.6.1')
     implementation("xerces:xerces:2.4.0")

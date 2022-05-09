@@ -6,6 +6,9 @@ en código y sus tareas respectivas.
 # Notas
 Cada semana intenta tener un ejercicio en las clases, con el objetivo de tener una práctica con el profesor del tema tratado
 
+# Ejercicios de JAVA
+https://codingbat.com/java
+
 # Semana 1
 Introducción de los elementos de trabajo
 
