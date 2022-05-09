@@ -1,4 +1,4 @@
-package edu.aluismarte.diplomado;
+package edu.aluismarte.diplomado.experiment;
 
 /**
  * @author aluis on 5/1/2022.

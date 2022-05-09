@@ -5,4 +5,8 @@ package edu.aluismarte.diplomado.week4;
  * @author aluis on 5/1/2022.
  */
 public class HomeworkTest {
+
+    private final Homework homework = new Homework();
+
+
 }

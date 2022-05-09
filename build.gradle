@@ -1,5 +1,7 @@
 plugins {
     id "java"
+    id 'org.springframework.boot' version '2.6.7'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 }
 
 group "edu.aluismarte.diplomado"
@@ -20,6 +22,10 @@ repositories {
 }
 
 dependencies {
+    // Spring
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
     implementation("org.owasp.encoder:encoder:1.2.3")
     implementation('org.jdom:jdom2:2.0.6.1')
     implementation("xerces:xerces:2.4.0")
