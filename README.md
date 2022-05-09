@@ -3,6 +3,9 @@
 Repositorio básico del código de ejemplo de los temas tratados en el diplomado, donde se muestran los temas explicados
 en código y sus tareas respectivas.
 
+# Notas
+Cada semana intenta tener un ejercicio en las clases, con el objetivo de tener una práctica con el profesor del tema tratado
+
 # Semana 1
 Introducción de los elementos de trabajo
 
@@ -13,10 +16,11 @@ Introducción de los elementos de trabajo
 - Compilador
 - Funcionamiento de JAVA
 
-En resumen se preparan los temás y la tarea para la siguiente semana
+En resumen se preparan los temas y la tarea para la siguiente semana
 
 # Semana 2
 Profundiza en JAVA y hace los preparativos para la parte de seguridad y pruebas
+
 
 # Semana 3
 Definimos lo que es una prueba y su forma de trabajo
@@ -34,9 +38,9 @@ Conjuntos de pruebas dinámicos y sus usos
 Conocimiento sobre seguridad y como estar actualizado
 
 # Semana 8
-Tendremos los modelos arquitectonicos y explicaremos sus usos.
+Tendremos los modelos arquitectónicos y explicaremos sus usos.
 
-Esta semana se explicarán las diferencias y se tomará el modelo arquitectonico monolitico
+Esta semana se explicarán las diferencias y se tomará el modelo arquitectónico monolítico
 
 # Semana 9
 Empezamos la definición de un micro servicio y las partes que lo definen, asi como la construcción básica:
