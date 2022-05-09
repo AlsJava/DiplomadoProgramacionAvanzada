@@ -3,7 +3,7 @@ package edu.aluismarte.diplomado.week3;
 /**
  * @author aluis on 5/8/2022.
  */
-public class Exercise1 {
+public class Exercise1Week3 {
 
     public static final String FIZZ = "Fizz";
     public static final String BUZZ = "Buzz";

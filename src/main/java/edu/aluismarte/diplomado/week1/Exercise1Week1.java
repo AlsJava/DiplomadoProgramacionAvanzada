@@ -18,7 +18,7 @@ import java.util.List;
  *
  * @author aluis on 4/24/2022.
  */
-public class Exercise1 {
+public class Exercise1Week1 {
 
     public static List<String> pairOfSumToTarget(List<Integer> numbers, int target) {
         return new ArrayList<>();

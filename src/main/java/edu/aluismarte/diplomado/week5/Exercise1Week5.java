@@ -10,7 +10,7 @@ import java.io.InputStream;
 /**
  * @author aluis on 5/8/2022.
  */
-public class Exercise1 {
+public class Exercise1Week5 {
 
     private static final String API_URL = "https://http.cat/";
 

@@ -11,9 +11,9 @@ import java.io.IOException;
 /**
  * @author aluis on 5/8/2022.
  */
-public class Exercise1Test {
+public class Exercise1WeekTest {
 
-    private final Exercise1 exercise1 = new Exercise1();
+    private final Exercise1Week5 exercise1Week5 = new Exercise1Week5();
 
     private File catImageFile;
     private int count = 0;

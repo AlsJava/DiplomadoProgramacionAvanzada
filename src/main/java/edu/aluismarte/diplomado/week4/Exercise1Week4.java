@@ -14,7 +14,7 @@ import java.util.List;
  *
  * @author aluis on 5/8/2022.
  */
-public class Exercise1 {
+public class Exercise1Week4 {
 
     /**
      * Cuando se combinan los helados, se toma el precio del helado más costoso y se usa como base
