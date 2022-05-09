@@ -2,10 +2,14 @@ package edu.aluismarte.diplomado.week6;
 
 import com.github.javafaker.Faker;
 import edu.aluismarte.diplomado.model.week3.LoanType;
+import org.junit.jupiter.api.DynamicTest;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestFactory;
 
 import java.math.BigDecimal;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
@@ -40,10 +44,22 @@ public class FieldWithToManyCombinationsTest {
     }
 
     @Nested
-    class DynamicTest {
+    class DynamicDataTest {
+
+        @TestFactory
+        Stream<DynamicTest> dynamicTestStream() {
+            Faker faker = new Faker();
+            return IntStream.range(0, 20).mapToObj(value -> {
+                String name = faker.name().fullName();
+                return DynamicTest.dynamicTest("Random name test:" + name, () -> {
+                    System.out.println("Using name: " + name);
+                    assertEquals("", fieldWithToManyCombinations.formValidation(NO_REQUIRED_FIELD, NO_COPY_FROM_DEFAULT, name, ""));
+                });
+            });
+        }
 
         @Test
-        void generateSomeNamesTest() {
+        void handmadeGenerateSomeNamesTest() {
             Faker faker = new Faker();
             for (int i = 0; i < 20; i++) {
                 String name = faker.name().fullName();
