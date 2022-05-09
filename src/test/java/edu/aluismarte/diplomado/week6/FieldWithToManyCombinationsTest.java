@@ -52,6 +52,12 @@ public class FieldWithToManyCombinationsTest {
     @Nested
     class DynamicDataTest {
 
+        /**
+         * Puedo tambien usar multiples archivos, con el valor files en caso de que no formen parte del proyecto
+         * El hecho de usar mas de un resource es para clasificar mejor la data y organizarla.
+         *
+         * @param name Nombre a usar para comparar
+         */
         @ParameterizedTest
         @CsvFileSource(resources = "/RandomNames.csv", numLinesToSkip = 1)
         void randomNameValueFromFileTest(String name) {
@@ -59,8 +65,14 @@ public class FieldWithToManyCombinationsTest {
             assertEquals("", fieldWithToManyCombinations.formValidation(NO_REQUIRED_FIELD, NO_COPY_FROM_DEFAULT, name, ""));
         }
 
+        /**
+         * Usando metodo externo a la clase debo usar ese tipo de puntero, Package.Class#Method
+         * Si uso un método directo en la misma clase (en caso de ser nested debe ser en la misma) solo uso el nombre del método
+         *
+         * @param name Nombre a usar para comparar
+         */
         @ParameterizedTest
-        @MethodSource("edu.aluismarte.diplomado.week6.FieldWithToManyCombinationsTest#provideRandomNames") // Usando metodo externo a la clase
+        @MethodSource("edu.aluismarte.diplomado.week6.FieldWithToManyCombinationsTest#provideRandomNames")
         void randomNameValueTest(String name) {
             System.out.println("Using name: " + name);
             assertEquals("", fieldWithToManyCombinations.formValidation(NO_REQUIRED_FIELD, NO_COPY_FROM_DEFAULT, name, ""));
