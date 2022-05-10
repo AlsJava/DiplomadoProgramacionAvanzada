@@ -14,5 +14,7 @@ public class Exercise1Week7 {
 
     private static final Logger log = LoggerFactory.getLogger(Exercise1Week7.class);
 
-
+    public void badLog(String parameter) {
+        log.debug("My parameter {}", parameter);
+    }
 }
