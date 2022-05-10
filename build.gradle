@@ -28,8 +28,6 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-validation")
     implementation("org.springframework.integration:spring-integration-core")
 
-    implementation('com.sparkjava:spark-core:2.9.3')
-    implementation("com.googlecode.json-simple:json-simple:1.1.1")
     implementation("xalan:xalan:2.7.2") // Probar con otras variantes
 
     implementation("org.owasp.encoder:encoder:1.2.3")
@@ -43,9 +41,9 @@ dependencies {
     annotationProcessor("org.projectlombok:lombok:$lombok_version")
 
     // JSON parser
-    implementation("com.fasterxml.jackson.core:jackson-core:2.13.2")
-    implementation("com.fasterxml.jackson.core:jackson-databind:2.13.2.2")
-    implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.2")
+    implementation("com.fasterxml.jackson.core:jackson-core:2.8.8") // No actualizar librerias genera vulnerabilidades
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.8.8")
+    implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.8.8")
 
     implementation('com.github.javafaker:javafaker:1.0.2') // Fake data
 

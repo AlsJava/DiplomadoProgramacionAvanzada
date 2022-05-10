@@ -1,13 +1,12 @@
 package edu.aluismarte.diplomado.week5;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.json.JsonMapper;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import edu.aluismarte.diplomado.model.week5.ChuckNorrisJoke;
 import edu.aluismarte.diplomado.model.week5.SearchChuckNorrisJoke;
 import okhttp3.*;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -19,7 +18,7 @@ public class ChuckNorrisJokeService {
 
     private final OkHttpClient client = new OkHttpClient();
 
-    private final ObjectMapper objectMapper = JsonMapper.builder().addModule(new JavaTimeModule()).build();
+    private final ObjectMapper objectMapper = new ObjectMapper();
 
     public ChuckNorrisJoke getRandomJoke() {
         Request request = new Request.Builder()
@@ -73,7 +72,8 @@ public class ChuckNorrisJokeService {
                 .url(CHUCK_NORRIS_IO_URL + "/categories")
                 .build();
         try {
-            return objectMapper.readerForListOf(String.class).readValue(sendRequest(request));
+            String[] values = objectMapper.readValue(sendRequest(request), String[].class);
+            return List.of(values);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
