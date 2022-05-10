@@ -1,5 +1,6 @@
 package edu.aluismarte.diplomado.week7;
 
+import org.owasp.encoder.Encode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -15,6 +16,7 @@ public class Exercise1Week7 {
     private static final Logger log = LoggerFactory.getLogger(Exercise1Week7.class);
 
     public void badLog(String parameter) {
-        log.debug("My parameter {}", parameter);
+        log.info("My parameter {}", parameter);
+//        log.info("My parameter {}", Encode.forJava(parameter));
     }
 }
