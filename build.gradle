@@ -26,6 +26,8 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
+    implementation("com.sparkjava:spark-core:2.7.2")
+    implementation("com.googlecode.json-simple:json-simple:1.1.1")
     implementation("xalan:xalan:2.7.2") // Probar con otras variantes
 
     implementation("org.owasp.encoder:encoder:1.2.3")
