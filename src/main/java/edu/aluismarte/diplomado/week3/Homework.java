@@ -40,7 +40,12 @@ public class Homework {
         if (loan == null) {
             return null;
         }
-        if (loan.getLoanType() == null || loan.getFrequencyType() == null || loan.getCapital() == null || loan.getQuotes() == null || loan.getInterest() == null || loan.getStartDate() == null) {
+        if (loan.getLoanType() == null ||
+                loan.getFrequencyType() == null ||
+                loan.getCapital() == null ||
+                loan.getQuotes() == null ||
+                loan.getInterest() == null ||
+                loan.getStartDate() == null) {
             return new ArrayList<>();
         }
         LocalDate last = loan.getStartDate();
