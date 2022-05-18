@@ -2,6 +2,8 @@ package edu.aluismarte.diplomado.week4;
 
 import edu.aluismarte.diplomado.model.week4.IceScream;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.List;
 
 /**
@@ -28,17 +30,15 @@ public class Exercise1Week4 {
      * Resultado = 150 + 60 + 30 = 240 vale el nuevo helado
      * <p>
      * El nombre del helado se genera usando los sabores de los otros helados
-     * Ejemplo, name = Helado de chocolate, Fresa y Chicle (el helado de menor valor va al final)
+     * Ejemplo, name = Helado de Chocolate, Fresa y Chicle (el helado de menor valor va al final)
      * <p>
      * El sabor del helado será mixto.
      *
-     * @param iceScreams      Helados a combinar
-     * @param combinationCost Porcentaje a usar como incremento según el costo de cada helado
+     * @param iceScreams                Helados a combinar
+     * @param percentageCombinationCost Porcentaje a usar como incremento según el costo de cada helado
      * @return El nuevo helado basado en el nombre del conjunto
      */
-    public IceScream createIceScreamCombination(List<IceScream> iceScreams, Double combinationCost) {
+    public IceScream createIceScreamCombination(List<IceScream> iceScreams, Double percentageCombinationCost) {
         return null;
     }
-
-
 }
