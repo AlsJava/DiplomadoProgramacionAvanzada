@@ -26,11 +26,18 @@ public class Homework {
             default -> null;
         };
         if (result == null) {
-            throw new Exception("No operation");
+            throw new OperationNullException();
         }
         File file = new File("filename.txt");
         try (PrintWriter out = new PrintWriter(file)) {
             out.println("Result is: " + result);
+        }
+    }
+
+    public static class OperationNullException extends RuntimeException {
+
+        public OperationNullException() {
+            super("No operation");
         }
     }
 

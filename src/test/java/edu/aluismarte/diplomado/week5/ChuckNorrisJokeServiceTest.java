@@ -84,14 +84,20 @@ class ChuckNorrisJokeServiceTest {
             Mockito.when(chuckNorrisJokeServiceMock.getRandomJoke()).thenReturn(chuckNorrisJokeReturn);
             ChuckNorrisJoke randomJoke = chuckNorrisJokeServiceMock.getRandomJoke();
             assertNotNull(randomJoke);
+            assertEquals(chuckNorrisJokeReturn.getId(), randomJoke.getId());
+            assertEquals(chuckNorrisJokeReturn.getValue(), randomJoke.getValue());
             System.out.println(randomJoke);
         }
 
         @Tag(TestTags.OFFLINE_TEST)
         @Test
         void getRandomJokeFromCategoryTest() {
-            Mockito.when(chuckNorrisJokeServiceMock.getJokesCategories()).thenReturn(List.of("religion", "science", "sport", "travel"));
+            List<String> categories = List.of("religion", "science", "sport", "travel");
+            Mockito.when(chuckNorrisJokeServiceMock.getJokesCategories()).thenReturn(categories);
             List<String> jokesCategories = chuckNorrisJokeServiceMock.getJokesCategories();
+            for (int i = 0; i < categories.size(); i++) {
+                assertEquals(categories.get(i), jokesCategories.get(i));
+            }
             SecureRandom secureRandom = new SecureRandom();
             String categorySelected = jokesCategories.get(secureRandom.nextInt(jokesCategories.size()));
             assertNotNull(categorySelected);
@@ -103,6 +109,8 @@ class ChuckNorrisJokeServiceTest {
             Mockito.when(chuckNorrisJokeServiceMock.getRandomJokeFromCategory(ArgumentMatchers.anyString())).thenReturn(chuckNorrisJokeReturn);
             ChuckNorrisJoke randomJoke = chuckNorrisJokeServiceMock.getRandomJokeFromCategory(categorySelected);
             assertNotNull(randomJoke);
+            assertEquals(chuckNorrisJokeReturn.getId(), randomJoke.getId());
+            assertEquals(chuckNorrisJokeReturn.getValue(), randomJoke.getValue());
             System.out.println(randomJoke);
         }
 

@@ -5,6 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 
@@ -43,5 +44,12 @@ public class Exercise1WeekTest {
 
     private void saveImage(BufferedImage bufferedImage) throws IOException {
         ImageIO.write(bufferedImage, "jpg", catImageFile);
+    }
+
+    public static byte[] toByteArray(BufferedImage bufferedImage, String format) throws IOException {
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        ImageIO.write(bufferedImage, format, byteArrayOutputStream);
+        return byteArrayOutputStream.toByteArray();
+
     }
 }

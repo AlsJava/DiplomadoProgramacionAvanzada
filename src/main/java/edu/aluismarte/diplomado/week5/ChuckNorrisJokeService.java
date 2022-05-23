@@ -6,7 +6,6 @@ import edu.aluismarte.diplomado.model.week5.SearchChuckNorrisJoke;
 import okhttp3.*;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
