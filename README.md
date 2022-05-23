@@ -64,3 +64,6 @@ Manejo de los logs y conceptos a tomar en cuenta a la hora de procesar data
 
 # Semana 12
 Manejo de transacciones con SAGA
+
+# Soluciones por semana
+[Soluciones](https://github.com/AlsJava/SolutionDiplomadoProgramacionAvanzada)
