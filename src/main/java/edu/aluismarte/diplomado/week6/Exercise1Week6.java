@@ -34,7 +34,7 @@ public class Exercise1Week6 {
         return false;
     }
 
-    public List<String> readAllLines(String mimetypesFile) {
+    private List<String> readAllLines(String mimetypesFile) {
         try {
             return Files.readAllLines(Paths.get("./mimetypes/" + mimetypesFile));
         } catch (IOException e) {
