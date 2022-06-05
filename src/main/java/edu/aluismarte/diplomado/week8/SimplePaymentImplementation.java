@@ -9,6 +9,8 @@ import java.util.UUID;
 /**
  * Implementación común de un sistema de pago con multiples proveedores
  *
+ * Esta forma es de un novato y demuestra que no se sabe usar el concepto de objetos y delegación de responsabilidad del SOLID
+ *
  * @author aluis on 4/24/2022.
  */
 public class SimplePaymentImplementation {
