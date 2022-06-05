@@ -11,7 +11,7 @@ import java.util.List;
  * Implementación simplificada de cálculo de lotería para quiniela y pale.
  * <p>
  * Por razones de simpleza no se calculan las tripletas, ya que es demostrativo para test
- *
+ * <p>
  * Ejemplo de números ganadores (05-10-25)
  * 05 En primera
  * 10 En segunda

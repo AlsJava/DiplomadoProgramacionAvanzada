@@ -2,8 +2,6 @@ package edu.aluismarte.diplomado.week4;
 
 import edu.aluismarte.diplomado.model.week4.IceScream;
 
-import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.util.List;
 
 /**
