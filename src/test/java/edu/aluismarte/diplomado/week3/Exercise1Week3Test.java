@@ -1,7 +1,6 @@
 package edu.aluismarte.diplomado.week3;
 
 /**
- *
  * @author aluis on 5/8/2022.
  */
 class Exercise1Week3Test {

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Generar los test dinámicos para que se tenga toda la data de prueba, tanto valores negativos como positivos
+ * Generar los test dinámicos o parametrizado para que se tenga toda la data de prueba, tanto valores negativos como positivos
  * <p>
  * Usar las funciones para leer los archivos de las extensiones correctas para crear casos dinámicos
  * También usar casos dinámicos para crear elementos negativos
@@ -37,9 +37,9 @@ class Exercise1Week6Test {
      * En este caso no se usa porque una línea siempre representa 1 parámetro.
      *
      * @param mimetypesFile Ruta del archivo a leer
-     * @return Una lista por lineas del archivo
+     * @return Una lista por líneas del archivo
      */
-    public List<String> readAllLines(String mimetypesFile) {
+    public static List<String> readAllLines(String mimetypesFile) {
         try {
             return Files.readAllLines(Paths.get(mimetypesFile));
         } catch (IOException e) {
