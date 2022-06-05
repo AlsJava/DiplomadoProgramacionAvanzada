@@ -6,8 +6,10 @@ import edu.aluismarte.diplomado.project.week10.saga.model.SagaStep;
 import edu.aluismarte.diplomado.project.week10.saga.model.SagaStepCompensator;
 import edu.aluismarte.diplomado.project.week10.saga.model.SagaStepHandler;
 import edu.aluismarte.diplomado.project.week9.command.CommandEvent;
+import org.springframework.stereotype.Component;
 
 @CommandEvent
+@Component
 public class SagaDemoStep1 implements SagaStep<DemoResponse> {
 
     @Override
@@ -21,6 +23,7 @@ public class SagaDemoStep1 implements SagaStep<DemoResponse> {
             @Override
             public void handle(SagaPayload<DemoResponse> sagaPayload) {
                 // Create object or something
+                System.out.println("Running Handler Step 1");
             }
         };
     }
@@ -31,6 +34,7 @@ public class SagaDemoStep1 implements SagaStep<DemoResponse> {
             @Override
             public void handle(SagaPayload<DemoResponse> sagaPayload) {
                 // delete objects created
+                System.out.println("Running Compensator Step 1");
             }
         };
     }
