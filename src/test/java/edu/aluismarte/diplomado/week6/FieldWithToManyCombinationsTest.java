@@ -41,12 +41,12 @@ public class FieldWithToManyCombinationsTest {
 
     @Test
     void copyFromOldDataTest() {
-        assertEquals(LoanType.FIXED, fieldWithToManyCombinations.formValidation(NO_REQUIRED_FIELD, COPY_FROM_DEFAULT, LoanType.FIXED, null));
+        assertEquals(LoanType.SAN, fieldWithToManyCombinations.formValidation(NO_REQUIRED_FIELD, COPY_FROM_DEFAULT, LoanType.SAN, null));
     }
 
     @Test
     void emptyTest() {
-        assertEquals(BigDecimal.ZERO, fieldWithToManyCombinations.formValidation(NO_REQUIRED_FIELD, NO_COPY_FROM_DEFAULT, new BigDecimal(10000), BigDecimal.ZERO));
+        assertEquals(BigDecimal.ZERO, fieldWithToManyCombinations.formValidation(NO_REQUIRED_FIELD, NO_COPY_FROM_DEFAULT, new BigDecimal(10_000), BigDecimal.ZERO));
     }
 
     @Nested
@@ -86,6 +86,8 @@ public class FieldWithToManyCombinationsTest {
                 return DynamicTest.dynamicTest("Random name test:" + name, () -> {
                     System.out.println("Using name: " + name);
                     assertEquals("", fieldWithToManyCombinations.formValidation(NO_REQUIRED_FIELD, NO_COPY_FROM_DEFAULT, name, ""));
+                    assertEquals("", fieldWithToManyCombinations.formValidation(REQUIRED_FIELD, NO_COPY_FROM_DEFAULT, name, ""));
+                    assertEquals(name, fieldWithToManyCombinations.formValidation(NO_REQUIRED_FIELD, COPY_FROM_DEFAULT, name, ""));
                 });
             });
         }
@@ -95,7 +97,7 @@ public class FieldWithToManyCombinationsTest {
             Faker faker = new Faker();
             for (int i = 0; i < 20; i++) {
                 String name = faker.name().fullName();
-                System.out.println("Using name: " + name);
+                System.out.println("Using name #" + i + ": " + name);
                 assertEquals("", fieldWithToManyCombinations.formValidation(NO_REQUIRED_FIELD, NO_COPY_FROM_DEFAULT, name, ""));
             }
         }
