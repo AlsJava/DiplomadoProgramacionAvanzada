@@ -4,6 +4,7 @@ import edu.aluismarte.diplomado.model.project.Demo;
 import edu.aluismarte.diplomado.model.project.DemoResponse;
 import edu.aluismarte.diplomado.project.week10.saga.SagaFactory;
 import edu.aluismarte.diplomado.project.week10.saga.SagaOrchestrator;
+import edu.aluismarte.diplomado.project.week10.saga.model.Saga;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -22,7 +23,8 @@ public class SagaDemoService {
 
     public String runDemo() {
         Demo demo = Demo.builder().id(UUID.randomUUID().toString()).build();
-        DemoResponse demoResponse = sagaOrchestrator.orchestrate(SagaFactory.createDemoSaga(UUID.randomUUID().toString(), demo), TIMEOUT);
+        Saga<DemoResponse> saga = SagaFactory.createDemoSaga("RandomID to identify saga", demo);
+        DemoResponse demoResponse = sagaOrchestrator.orchestrate(saga, TIMEOUT);
         return demoResponse.getResult();
     }
 }
