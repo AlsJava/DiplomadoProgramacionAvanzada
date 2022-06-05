@@ -19,5 +19,6 @@ public class Payment {
 
     private boolean cancel;
 
+    @Builder.Default
     private BigDecimal refund = new BigDecimal(0);
 }
