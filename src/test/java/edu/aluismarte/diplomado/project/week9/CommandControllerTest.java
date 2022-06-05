@@ -1,8 +1,9 @@
-package edu.aluismarte.diplomado.project.week10;
+package edu.aluismarte.diplomado.project.week9;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.ResponseEntity;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -10,13 +11,15 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * @author aluis on 6/4/2022.
  */
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-class SagaDemoServiceTest {
+class CommandControllerTest {
 
     @Autowired
-    private SagaDemoService sagaDemoService;
+    private CommandController commandController;
 
     @Test
     void simpleRunTest() {
-        assertEquals("OK", sagaDemoService.runDemo());
+        ResponseEntity<String> response = commandController.demo();
+        assertEquals("OK", response.getBody());
     }
+
 }
