@@ -14,4 +14,9 @@ public class WinnerNumber {
 
     private String position;
     private String number;
+
+    @Override
+    public String toString() {
+        return position + ": " + number;
+    }
 }
