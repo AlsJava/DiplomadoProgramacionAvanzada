@@ -1,4 +1,4 @@
-package edu.aluismarte.diplomado.project.week10;
+package edu.aluismarte.diplomado.project.week10.model;
 
 import edu.aluismarte.diplomado.model.project.DemoResponse;
 import edu.aluismarte.diplomado.project.week10.saga.model.SagaPayload;

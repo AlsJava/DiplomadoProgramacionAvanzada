@@ -2,8 +2,8 @@ package edu.aluismarte.diplomado.project.week10.saga;
 
 import edu.aluismarte.diplomado.model.project.Demo;
 import edu.aluismarte.diplomado.model.project.DemoResponse;
-import edu.aluismarte.diplomado.project.week10.SagaDemoStep1;
-import edu.aluismarte.diplomado.project.week10.SagaDemoStep2;
+import edu.aluismarte.diplomado.project.week10.model.SagaDemoStep1;
+import edu.aluismarte.diplomado.project.week10.model.SagaDemoStep2;
 import edu.aluismarte.diplomado.project.week10.saga.model.Saga;
 import edu.aluismarte.diplomado.project.week10.saga.model.SagaPayload;
 import edu.aluismarte.diplomado.project.week10.saga.model.SagaPayLoadKey;
