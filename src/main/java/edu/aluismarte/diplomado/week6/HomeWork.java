@@ -19,6 +19,10 @@ public class HomeWork {
             return emptyValue;
         }
         if (useDefaultValue) {
+            // TODO el cliente pide que si es null, no se retorne y se lleve el emptyValue
+//            if (defaultValue != null) {
+//                return defaultValue;
+//            }
             return defaultValue;
         }
         return emptyValue;
