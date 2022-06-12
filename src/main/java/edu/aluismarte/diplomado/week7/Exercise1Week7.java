@@ -1,7 +1,6 @@
 package edu.aluismarte.diplomado.week7;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Verificar que sucede con los logs cuando no se validan las cosas antes de pasarlas
@@ -10,9 +9,8 @@ import org.slf4j.LoggerFactory;
  *
  * @author aluis on 5/8/2022.
  */
+@Slf4j
 public class Exercise1Week7 {
-
-    private static final Logger log = LoggerFactory.getLogger(Exercise1Week7.class);
 
     public void badLog(String parameter) {
         log.info("My parameter {}", parameter);
