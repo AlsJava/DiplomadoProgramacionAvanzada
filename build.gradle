@@ -56,7 +56,7 @@ dependencies {
     testImplementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.8.8")
 
     implementation('com.github.javafaker:javafaker:1.0.2') // Fake data
-    implementation("com.squareup.okhttp3:okhttp:4.9.3") // HTTP conections
+    implementation("com.squareup.okhttp3:okhttp:4.9.3") // HTTP connections
 
     testRuntimeOnly('org.junit.jupiter:junit-jupiter-engine:5.8.2')
     testCompileOnly("org.projectlombok:lombok:$lombok_version")
