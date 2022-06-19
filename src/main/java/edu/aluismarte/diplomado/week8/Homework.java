@@ -9,5 +9,5 @@ package edu.aluismarte.diplomado.week8;
  */
 public class Homework {
 
-    //
+    // Se entrega un diagrama UML con el diseño esperado
 }
