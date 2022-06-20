@@ -16,68 +16,6 @@ tratado
 
 https://codingbat.com/java
 
-# Configuraciones
-
-Para clonar y configurar el proyecto debemos tener IntelliJ (Se instala o se descomprime) y el GIT for windows (Este se
-instala) y una vez hecho esto se procede a lo siguiente:
-
-## Clonar el proyecto con IntelliJ
-![Clonación](documentation/HowTo/IntellijClonarRepositorio1.png?raw=true)
-
-Copiamos la URL del git y luego la clonamos
-
-![Clonación](documentation/HowTo/IntellijClonarRepositorio2.png?raw=true)
-
-## Configurar JDK (IntelliJ)
-
-Una vez abierto el proyecto vamos a project structure
-
-![Clonación](documentation/HowTo/ConfigurarJDK1.png?raw=true)
-
-Vamos a SDKs y le damos al signo mas para adicionar un JDK
-
-![Clonación](documentation/HowTo/ConfigurarJDK2.png?raw=true)
-
-Luego le damos a download JDK
-
-![Clonación](documentation/HowTo/ConfigurarJDK3.png?raw=true)
-
-Seleccionamos la versión (la Ultima LTS de preferencia) y el vender que de preferencia será amazon
-
-![Clonación](documentation/HowTo/ConfigurarJDK4.png?raw=true)
-
-Una vez descargue vamos a y configuramos el SDK en nuestro proyecto
-
-![Clonación](documentation/HowTo/ConfigurarJDK5.png?raw=true)
-
-## Configurar Gradle
-
-En la pestaña derecha vamos y le damos a la herramienta
-
-![Clonación](documentation/HowTo/ConfigurarGradle1.png?raw=true)
-
-Le damos a configuraciones de gradle
-
-![Clonación](documentation/HowTo/ConfigurarGradle2.png?raw=true)
-
-Le indicamos que use el mismo JDK que el proyecto
-
-![Clonación](documentation/HowTo/ConfigurarGradle3.png?raw=true)
-
-## Actualizar y bajar las dependencias del proyecto
-
-Una vez ya configurado todo, solo debemos hacer el reload del proyecto para que descargue todas las dependencias
-
-![Clonación](documentation/HowTo/ActualizaciónGradleDependencies.png?raw=true)
-
-
-## Pull o bajar los cambios del proyecto
-
-Para bajar los cambios y poner todo al dia, en caso de que existan cambios en el proyecto, usamos ese botón o presionamos CTRL-T
-
-![Clonación](documentation/HowTo/PullProject.png?raw=true)
-
-
 # Detalles por semana
 
 ## Semana 1
@@ -154,4 +92,65 @@ Manejo de transacciones con SAGA
 # Soluciones por semana
 
 [Soluciones](https://github.com/AlsJava/SolutionDiplomadoProgramacionAvanzada)
+
+# Configuraciones
+
+Para clonar y configurar el proyecto debemos tener IntelliJ (Se instala o se descomprime) y el GIT for windows (Este se
+instala) y una vez hecho esto se procede a lo siguiente:
+
+## Clonar el proyecto con IntelliJ
+![Clonación](documentation/HowTo/IntellijClonarRepositorio1.png?raw=true)
+
+Copiamos la URL del git y luego la clonamos
+
+![Clonación](documentation/HowTo/IntellijClonarRepositorio2.png?raw=true)
+
+## Configurar JDK (IntelliJ)
+
+Una vez abierto el proyecto vamos a project structure
+
+![Clonación](documentation/HowTo/ConfigurarJDK1.png?raw=true)
+
+Vamos a SDKs y le damos al signo mas para adicionar un JDK
+
+![Clonación](documentation/HowTo/ConfigurarJDK2.png?raw=true)
+
+Luego le damos a download JDK
+
+![Clonación](documentation/HowTo/ConfigurarJDK3.png?raw=true)
+
+Seleccionamos la versión (la Ultima LTS de preferencia) y el vender que de preferencia será amazon
+
+![Clonación](documentation/HowTo/ConfigurarJDK4.png?raw=true)
+
+Una vez descargue vamos a y configuramos el SDK en nuestro proyecto
+
+![Clonación](documentation/HowTo/ConfigurarJDK5.png?raw=true)
+
+## Configurar Gradle
+
+En la pestaña derecha vamos y le damos a la herramienta
+
+![Clonación](documentation/HowTo/ConfigurarGradle1.png?raw=true)
+
+Le damos a configuraciones de gradle
+
+![Clonación](documentation/HowTo/ConfigurarGradle2.png?raw=true)
+
+Le indicamos que use el mismo JDK que el proyecto
+
+![Clonación](documentation/HowTo/ConfigurarGradle3.png?raw=true)
+
+## Actualizar y bajar las dependencias del proyecto
+
+Una vez ya configurado todo, solo debemos hacer el reload del proyecto para que descargue todas las dependencias
+
+![Clonación](documentation/HowTo/ActualizaciónGradleDependencies.png?raw=true)
+
+
+## Pull o bajar los cambios del proyecto
+
+Para bajar los cambios y poner todo al dia, en caso de que existan cambios en el proyecto, usamos ese botón o presionamos CTRL-T
+
+![Clonación](documentation/HowTo/PullProject.png?raw=true)
 
