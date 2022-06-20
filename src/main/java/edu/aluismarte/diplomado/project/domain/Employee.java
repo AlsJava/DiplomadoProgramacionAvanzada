@@ -1,17 +1,16 @@
 package edu.aluismarte.diplomado.project.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 /**
  * @author aluis on 6/12/2022.
  */
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 @Getter
 @Setter
 @Entity
@@ -24,4 +23,10 @@ public class Employee {
 
     @Column
     private String name;
+
+    @Column
+    private String description;
+
+    @Column
+    private LocalDate entryDate;
 }
