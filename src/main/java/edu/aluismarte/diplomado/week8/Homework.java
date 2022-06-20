@@ -10,4 +10,5 @@ package edu.aluismarte.diplomado.week8;
 public class Homework {
 
     // Se entrega un diagrama UML con el diseño esperado
+    // Se inicia el proyecto GIT en github del proyecto a entregar
 }
