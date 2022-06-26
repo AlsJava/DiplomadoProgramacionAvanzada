@@ -30,6 +30,9 @@ public class ConstantDesign {
     }
 
     public boolean isValidIntegerProvider(Integer provider) {
+        if (provider == null) {
+            return false;
+        }
         if (PAYPAL_CONSTANT == provider) {
             return true;
         }
