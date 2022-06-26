@@ -1,0 +1,33 @@
+package edu.aluismarte.diplomado.project.week11.service;
+
+import edu.aluismarte.diplomado.project.domain.Employee;
+import edu.aluismarte.diplomado.project.repositories.EmployeeRepository;
+import edu.aluismarte.diplomado.project.week11.FactoryPattern;
+import edu.aluismarte.diplomado.project.week11.dto.EmployeeDTO;
+import edu.aluismarte.diplomado.project.week11.request.CreateEmployeeRequest;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+/**
+ * @author aluis on 6/26/2022.
+ */
+@RequiredArgsConstructor
+@Service
+public class EmployeeService {
+
+    private final EmployeeRepository employeeRepository;
+
+    public List<EmployeeDTO> getEmployees() {
+        return employeeRepository.findAll().stream().map(FactoryPattern.EmployeeDTOFactory::toEmployeeDTO).collect(Collectors.toList());
+    }
+
+    public EmployeeDTO createEmployee(CreateEmployeeRequest createEmployeeRequest) {
+        Employee employee = FactoryPattern.EmployeeFactory.toEmployee(createEmployeeRequest);
+        employeeRepository.save(employee);
+        return employee.toDTO();
+    }
+
+}

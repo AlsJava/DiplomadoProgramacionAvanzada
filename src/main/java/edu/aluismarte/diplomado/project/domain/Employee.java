@@ -1,5 +1,8 @@
 package edu.aluismarte.diplomado.project.domain;
 
+import edu.aluismarte.diplomado.model.project.EmployeeState;
+import edu.aluismarte.diplomado.project.week11.Conversions;
+import edu.aluismarte.diplomado.project.week11.dto.EmployeeDTO;
 import lombok.*;
 
 import javax.persistence.*;
@@ -29,4 +32,24 @@ public class Employee {
 
     @Column
     private LocalDate entryDate;
+
+    /**
+     * Conversión del enum para la DB en un número
+     */
+    @Convert(converter = Conversions.EmployeeStateConverter.class)
+    @Column
+    private EmployeeState state;
+
+
+    /**
+     * Patrón más integrado y adecuado en la lógica, cada objeto se ahce responsable de sus conversiones
+     *
+     * @return Modelo DTO del Employee
+     */
+    public EmployeeDTO toDTO() {
+        return EmployeeDTO.builder()
+                .id(id)
+                .name(name)
+                .build();
+    }
 }
