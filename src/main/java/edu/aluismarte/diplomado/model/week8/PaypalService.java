@@ -12,7 +12,7 @@ import java.util.Map;
  * @author aluis on 4/24/2022.
  * @implNote Demostration class only
  */
-public class ServicePaypal implements PaymentGateway {
+public class PaypalService implements PaymentGateway {
 
     private static final Map<String, Payment> PAYMENTS = new HashMap<>();
 

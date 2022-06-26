@@ -1,7 +1,7 @@
 package edu.aluismarte.diplomado.week8;
 
-import edu.aluismarte.diplomado.model.week8.ServicePaypal;
-import edu.aluismarte.diplomado.model.week8.ServiceStripe;
+import edu.aluismarte.diplomado.model.week8.PaypalService;
+import edu.aluismarte.diplomado.model.week8.StripeService;
 import edu.aluismarte.diplomado.model.week8.network.*;
 
 import java.util.UUID;
@@ -15,16 +15,16 @@ import java.util.UUID;
  */
 public class SimplePaymentImplementation {
 
-    private final ServiceStripe serviceStripe = new ServiceStripe();
-    private final ServicePaypal servicePaypal = new ServicePaypal();
+    private final StripeService stripeService = new StripeService();
+    private final PaypalService paypalService = new PaypalService();
 
     public PaymentResponse pay(PaymentRequest paymentRequest) {
         PaymentResponse paymentResponse = PaymentResponse.builder().id(UUID.randomUUID().toString()).build();
         switch (paymentRequest.getProvider()) {
             case "STRIPE" ->
-                    paymentResponse.setStatus(serviceStripe.pay(paymentResponse.getId(), paymentRequest.getAmount()));
+                    paymentResponse.setStatus(stripeService.pay(paymentResponse.getId(), paymentRequest.getAmount()));
             case "PAYPAL" ->
-                    paymentResponse.setStatus(servicePaypal.pay(paymentResponse.getId(), paymentRequest.getAmount()));
+                    paymentResponse.setStatus(paypalService.pay(paymentResponse.getId(), paymentRequest.getAmount()));
             default -> paymentResponse.setId(null);
         }
         return paymentResponse;
@@ -33,8 +33,8 @@ public class SimplePaymentImplementation {
     public CancelPaymentResponse cancel(CancelPaymentRequest cancelPaymentRequest) {
         CancelPaymentResponse cancelPaymentResponse = CancelPaymentResponse.builder().build();
         switch (cancelPaymentRequest.getProvider()) {
-            case "STRIPE" -> cancelPaymentResponse.setStatus(serviceStripe.cancel(cancelPaymentRequest.getId()));
-            case "PAYPAL" -> cancelPaymentResponse.setStatus(servicePaypal.cancel(cancelPaymentRequest.getId()));
+            case "STRIPE" -> cancelPaymentResponse.setStatus(stripeService.cancel(cancelPaymentRequest.getId()));
+            case "PAYPAL" -> cancelPaymentResponse.setStatus(paypalService.cancel(cancelPaymentRequest.getId()));
         }
         return cancelPaymentResponse;
     }
@@ -43,9 +43,9 @@ public class SimplePaymentImplementation {
         RefundPaymentResponse refundPaymentResponse = RefundPaymentResponse.builder().build();
         switch (refundPaymentRequest.getProvider()) {
             case "STRIPE" ->
-                    refundPaymentResponse.setStatus(serviceStripe.refund(refundPaymentRequest.getId(), refundPaymentRequest.getAmount()));
+                    refundPaymentResponse.setStatus(stripeService.refund(refundPaymentRequest.getId(), refundPaymentRequest.getAmount()));
             case "PAYPAL" ->
-                    refundPaymentResponse.setStatus(servicePaypal.refund(refundPaymentRequest.getId(), refundPaymentRequest.getAmount()));
+                    refundPaymentResponse.setStatus(paypalService.refund(refundPaymentRequest.getId(), refundPaymentRequest.getAmount()));
         }
         return refundPaymentResponse;
     }

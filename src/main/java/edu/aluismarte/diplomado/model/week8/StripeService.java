@@ -12,7 +12,7 @@ import java.util.Map;
  * @author aluis on 4/24/2022.
  * @implNote Demostration class only
  */
-public class ServiceStripe implements PaymentGateway {
+public class StripeService implements PaymentGateway {
 
     private static final Map<String, Payment> PAYMENTS = new HashMap<>();
 

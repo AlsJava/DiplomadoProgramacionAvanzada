@@ -12,7 +12,7 @@ package edu.aluismarte.diplomado.week8;
  * @implSpec El pago se hace con el listado de productos y esta se convierte en una orden (total de la factura, listado de productos, id, method de pago, fecha)
  * @implNote Pueden usar el diagramador que más les guste, pero recomiendo DrawIO
  * @see <a href="https://app.diagrams.net/">DrawIO</a>
- * @see <a href="">Video de iniciación de un proyecto Spring</a>
+ * @see <a href="https://youtu.be/p6RV8qNCzZU?list=PLiINuMw8xDq7Q0g4lQG5hn_VVUnYzcni2&t=7110">Video de iniciación de un proyecto Spring</a>
  */
 public class Homework {
 
