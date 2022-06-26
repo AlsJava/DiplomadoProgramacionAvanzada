@@ -1,6 +1,6 @@
-package edu.aluismarte.diplomado.project.week11.response;
+package edu.aluismarte.diplomado.project.week11.network.response;
 
-import edu.aluismarte.diplomado.project.week11.dto.EmployeeDTO;
+import edu.aluismarte.diplomado.project.week11.network.dto.EmployeeDTO;
 import lombok.*;
 
 /**

@@ -3,8 +3,8 @@ package edu.aluismarte.diplomado.project.week11.service;
 import edu.aluismarte.diplomado.project.domain.Employee;
 import edu.aluismarte.diplomado.project.repositories.EmployeeRepository;
 import edu.aluismarte.diplomado.project.week11.FactoryPattern;
-import edu.aluismarte.diplomado.project.week11.dto.EmployeeDTO;
-import edu.aluismarte.diplomado.project.week11.request.CreateEmployeeRequest;
+import edu.aluismarte.diplomado.project.week11.network.dto.EmployeeDTO;
+import edu.aluismarte.diplomado.project.week11.network.request.CreateEmployeeRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

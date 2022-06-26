@@ -1,8 +1,8 @@
 package edu.aluismarte.diplomado.project.week11;
 
 import edu.aluismarte.diplomado.project.domain.Employee;
-import edu.aluismarte.diplomado.project.week11.dto.EmployeeDTO;
-import edu.aluismarte.diplomado.project.week11.request.CreateEmployeeRequest;
+import edu.aluismarte.diplomado.project.week11.network.dto.EmployeeDTO;
+import edu.aluismarte.diplomado.project.week11.network.request.CreateEmployeeRequest;
 
 /**
  * Mostrar el uso del Factory pattern en las conversiones de los objetos básicos cuando se transforman de un tipo a otro.

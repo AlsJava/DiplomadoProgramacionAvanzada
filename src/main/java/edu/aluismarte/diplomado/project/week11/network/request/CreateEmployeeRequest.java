@@ -1,4 +1,4 @@
-package edu.aluismarte.diplomado.project.week11.request;
+package edu.aluismarte.diplomado.project.week11.network.request;
 
 import lombok.*;
 

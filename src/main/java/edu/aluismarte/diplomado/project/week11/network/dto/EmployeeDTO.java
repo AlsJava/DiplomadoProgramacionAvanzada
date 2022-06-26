@@ -1,4 +1,4 @@
-package edu.aluismarte.diplomado.project.week11.dto;
+package edu.aluismarte.diplomado.project.week11.network.dto;
 
 import edu.aluismarte.diplomado.model.project.EmployeeStateJson;
 import edu.aluismarte.diplomado.model.project.EmployeeStateJson2;

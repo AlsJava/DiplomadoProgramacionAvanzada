@@ -2,7 +2,7 @@ package edu.aluismarte.diplomado.project.domain;
 
 import edu.aluismarte.diplomado.model.project.EmployeeState;
 import edu.aluismarte.diplomado.project.week11.Conversions;
-import edu.aluismarte.diplomado.project.week11.dto.EmployeeDTO;
+import edu.aluismarte.diplomado.project.week11.network.dto.EmployeeDTO;
 import lombok.*;
 
 import javax.persistence.*;

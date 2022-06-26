@@ -1,8 +1,8 @@
 package edu.aluismarte.diplomado.project.week11.controller;
 
-import edu.aluismarte.diplomado.project.week11.request.CreateEmployeeRequest;
-import edu.aluismarte.diplomado.project.week11.response.CreateEmployeeResponse;
-import edu.aluismarte.diplomado.project.week11.response.GetEmployeesResponse;
+import edu.aluismarte.diplomado.project.week11.network.request.CreateEmployeeRequest;
+import edu.aluismarte.diplomado.project.week11.network.response.CreateEmployeeResponse;
+import edu.aluismarte.diplomado.project.week11.network.response.GetEmployeesResponse;
 import edu.aluismarte.diplomado.project.week11.service.EmployeeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
