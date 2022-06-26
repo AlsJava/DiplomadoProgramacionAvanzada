@@ -15,5 +15,4 @@ import java.math.BigDecimal;
 public class RefundPaymentResponse {
 
     private String status;
-    private BigDecimal amount;
 }

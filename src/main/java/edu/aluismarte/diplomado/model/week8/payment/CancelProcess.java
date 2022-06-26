@@ -1,13 +1,11 @@
 package edu.aluismarte.diplomado.model.week8.payment;
 
-import java.math.BigDecimal;
-
 /**
  * Ejemplo de interfaz de responsabilidad única
  *
  * @author aluis on 4/24/2022.
  */
-public interface PaymentProcess {
+public interface CancelProcess {
 
-    String pay(String id, BigDecimal amount);
+    String cancel(String id);
 }

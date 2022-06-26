@@ -7,7 +7,7 @@ import java.math.BigDecimal;
  *
  * @author aluis on 4/24/2022.
  */
-public interface PaymentProcess {
+public interface RefundProcess {
 
-    String pay(String id, BigDecimal amount);
+    String refund(String id, BigDecimal amount);
 }
