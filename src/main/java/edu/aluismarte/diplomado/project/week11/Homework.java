@@ -1,11 +1,16 @@
 package edu.aluismarte.diplomado.project.week11;
 
 /**
- * Se deberá aplicar todos los patrónes y tecnicas (JSON y DB) en el proyecto
- * Todos los request y responses deben estar con el patrón adecuado con sus clases (en el proyecto)
- * Aplicar los factories adecuadamente
+ * Se tendrá un proyecto por alumno donde tendrá que aplicar el patrón SAGA.
+ *
+ * Se hará el proceso de contactar la API usando la SAGA para simular procesos desconectados
+ *
+ * Crear procesos de: Crear pago, Cancelar pago, reembolso de un pago
  *
  * @author aluis on 6/4/2022.
+ * @implSpec Ahora los elementos del command llamarán la SAGA y tendrán la lógica deseada
  */
 public class Homework {
+
+    // TODO La tarea será aplicar este patrón al diseño
 }

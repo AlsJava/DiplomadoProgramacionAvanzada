@@ -15,6 +15,9 @@ public class ConstantExample2 {
     public static final int PAID = 2;
     public static final int HOLD = 3; // Lo adiciono 3 meses después porque queremos cotizaciones
 
+    /**
+     * Ejemplo de la tabla en DB con la sub tabla de los estados
+     */
     @AllArgsConstructor
     @NoArgsConstructor
     @Builder
@@ -22,11 +25,17 @@ public class ConstantExample2 {
     @Setter
     static class Invoice {
 
+        // SELECT * FROM invoice WHERE id = ?;
+        // SELECT * FROM invoice i, invoice_states ie WHERE ie.id = i.state AND i.id = ?;
+
         private Long id;
         private InvoiceState state;
         private BigDecimal amount;
     }
 
+    /**
+     * Ejemplo de la tabla en DB
+     */
     @AllArgsConstructor
     @NoArgsConstructor
     @Builder
