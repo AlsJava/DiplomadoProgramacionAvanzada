@@ -43,6 +43,11 @@ class ConstantDesignTest {
         void randomStringProviderTest() {
             assertFalse(constantDesign.isValidStringProvider("sdsdjhnimsd"));
         }
+
+        @Test
+        void noConstantStringProviderTest() {
+            assertFalse(constantDesign.isValidStringProvider("PAYPAL "));
+        }
     }
 
     @Nested
@@ -65,7 +70,7 @@ class ConstantDesignTest {
         }
 
         @Test
-        void randomStringProviderTest() {
+        void randomNumberProviderTest() {
             assertFalse(constantDesign.isValidIntegerProvider(200));
         }
     }
