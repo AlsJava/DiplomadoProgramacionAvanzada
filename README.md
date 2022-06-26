@@ -16,6 +16,11 @@ tratado
 
 https://codingbat.com/java
 
+# Soluciones
+
+- [Soluciones Semanales](https://github.com/AlsJava/SolutionDiplomadoProgramacionAvanzada)
+- [Solucion Proyecto Final](https://github.com/AlsJava/ProyectoFinalProgramacionAvanzada)
+
 # Detalles por semana
 
 ## Semana 1
@@ -88,10 +93,6 @@ Manejo de los logs y conceptos a tomar en cuenta a la hora de procesar data
 ## Semana 12
 
 Manejo de transacciones con SAGA
-
-# Soluciones por semana
-
-[Soluciones](https://github.com/AlsJava/SolutionDiplomadoProgramacionAvanzada)
 
 # Configuraciones
 
