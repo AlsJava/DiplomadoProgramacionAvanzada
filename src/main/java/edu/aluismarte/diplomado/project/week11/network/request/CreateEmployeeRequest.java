@@ -2,6 +2,8 @@ package edu.aluismarte.diplomado.project.week11.network.request;
 
 import lombok.*;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
 /**
@@ -14,7 +16,9 @@ import java.time.LocalDate;
 @Setter
 public class CreateEmployeeRequest {
 
+    @NotEmpty
     private String name;
     private String description;
+    @NotNull
     private LocalDate entryDate;
 }
