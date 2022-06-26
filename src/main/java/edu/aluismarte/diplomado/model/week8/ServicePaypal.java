@@ -10,7 +10,7 @@ import java.util.Map;
  * @author aluis on 4/24/2022.
  * @implNote Demostration class only
  */
-public class Stripe {
+public class ServicePaypal {
 
     private static final Map<String, Payment> PAYMENTS = new HashMap<>();
 
