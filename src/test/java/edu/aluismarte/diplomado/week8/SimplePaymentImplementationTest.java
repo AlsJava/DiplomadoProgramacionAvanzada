@@ -10,8 +10,6 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 /**
  * Test simples, inicialmente, más luego se completan los escenarios deseados
  *
- * TODO completar estos test
- *
  * @author aluis on 6/19/2022.
  */
 class SimplePaymentImplementationTest {

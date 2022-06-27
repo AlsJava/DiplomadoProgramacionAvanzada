@@ -26,4 +26,8 @@ public class Log {
 
     @Column
     private String process;
+
+    @Lob
+    @Column
+    private String parameters;
 }
