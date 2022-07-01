@@ -1,8 +1,10 @@
 package edu.aluismarte.diplomado.project.domain;
 
+import edu.aluismarte.diplomado.utils.MapJsonConverter;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.Map;
 import java.util.UUID;
 
 /**
@@ -30,4 +32,7 @@ public class Log {
     @Lob
     @Column
     private String parameters;
+
+    @Convert(converter = MapJsonConverter.class)
+    private Map<String, String> parameterMap;
 }
