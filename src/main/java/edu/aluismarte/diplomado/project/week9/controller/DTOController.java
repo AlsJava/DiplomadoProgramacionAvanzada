@@ -12,7 +12,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * TODO adicionar las partes que tiene un controller bien implementado
+ * Una correcta implementación de un Rest Controller tiene las siguientes partes:
+ *  - Un controller (Llama al servicio y construye los RESPONSE, no tiene ninguna lógica de negocio)
+ *  - Una capa de Servicio (Toda la lógica y conexiones a DB debe estar escrita en esta clase)
+ *  - Todos los llamados a la API usan objetos REQUEST en clases POJO para manejar los parámetros enviados
+ *  - Todos los llamados a la API usan objetos RESPONSE en clases POJO para exponer la data al usuario
  *
  * @author aluis on 6/26/2022.
  */
