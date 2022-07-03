@@ -1,10 +1,9 @@
-package edu.aluismarte.diplomado.project.week9.dto;
+package edu.aluismarte.diplomado.project.week9.network.dto;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import edu.aluismarte.diplomado.model.project.EmployeeStateJson;
 import edu.aluismarte.diplomado.model.project.EmployeeStateJson2;
-import edu.aluismarte.diplomado.project.week9.network.dto.EmployeeDTO;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
