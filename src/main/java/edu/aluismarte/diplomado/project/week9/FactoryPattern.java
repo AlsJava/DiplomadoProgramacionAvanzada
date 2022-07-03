@@ -16,9 +16,9 @@ public class FactoryPattern {
     public static class EmployeeDTOFactory {
 
         /**
-         * Patrón más separado, para ahcer las conversiones
+         * Patrón más separado, para hacer las conversiones
          * <p>
-         * Aunque tiene ventajas, hace más difícil rastrear problemas relacionados a la conversión.
+         * Aunque tiene ventajas, hace más difícil rastrear problemas relacionados con la conversión.
          * <p>
          * Cada clase debe tener su propia implementación, por lo que tendría 2 clases y esto lo hace más molesto y complejo
          *

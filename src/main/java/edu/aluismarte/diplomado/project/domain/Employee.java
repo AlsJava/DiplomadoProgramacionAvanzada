@@ -7,6 +7,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 /**
  * @author aluis on 6/12/2022.
@@ -40,9 +41,19 @@ public class Employee {
     @Column
     private EmployeeState state;
 
+    // Audit Fields, no es necesario exponer esto en la API
+
+    @Column
+    private String createdBy;
+    @Column
+    private String updatedBy;
+    @Column
+    private LocalDateTime createdDate;
+    @Column
+    private LocalDateTime updatedDate;
 
     /**
-     * Patrón más integrado y adecuado en la lógica, cada objeto se ahce responsable de sus conversiones
+     * Patrón más integrado y adecuado en la lógica, cada objeto se hace responsable de sus conversiones
      *
      * @return Modelo DTO del Employee
      */

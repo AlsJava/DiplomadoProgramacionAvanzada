@@ -8,9 +8,12 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
+ * TODO adicionar las partes que tiene un controller bien implementado
+ *
  * @author aluis on 6/26/2022.
  */
 @RestController
@@ -21,11 +24,13 @@ public class DTOController {
 
     @GetMapping
     public ResponseEntity<GetEmployeesResponse> getEmployees() {
-        return ResponseEntity.ok(GetEmployeesResponse.builder().employees(employeeService.getEmployees()).build());
+        return ResponseEntity.ok(GetEmployeesResponse.builder()
+                        .employees(employeeService.getEmployees())
+                        .build());
     }
 
     @PostMapping
-    public ResponseEntity<CreateEmployeeResponse> createEmployee(CreateEmployeeRequest createEmployeeRequest) {
+    public ResponseEntity<CreateEmployeeResponse> createEmployee(@RequestBody CreateEmployeeRequest createEmployeeRequest) {
         return ResponseEntity.ok(CreateEmployeeResponse.builder()
                 .employee(employeeService.createEmployee(createEmployeeRequest))
                 .build());

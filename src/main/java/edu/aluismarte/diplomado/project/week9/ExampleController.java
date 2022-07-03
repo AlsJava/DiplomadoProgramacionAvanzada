@@ -10,12 +10,11 @@ import org.springframework.web.bind.annotation.*;
  * @author aluis on 6/26/2022.
  */
 @RestController
-@RequiredArgsConstructor
 public class ExampleController {
 
     @GetMapping("/example/demo/{id}")
     public ResponseEntity<String> demoPath(@PathVariable String id) {
-        return ResponseEntity.ok("Tengo el ID" + id);
+        return ResponseEntity.ok("Tengo el ID: " + id);
     }
 
     @PostMapping("/example/demo")
@@ -30,6 +29,6 @@ public class ExampleController {
     @ToString
     static class DemoRequest {
         private String id;
-        private long number;
+        private Long number;
     }
 }

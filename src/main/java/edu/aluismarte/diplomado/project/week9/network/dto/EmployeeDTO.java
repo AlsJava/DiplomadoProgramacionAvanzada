@@ -18,17 +18,14 @@ public class EmployeeDTO {
 
     private Long id;
     private String name;
-
     /**
      * Ejemplo de ENUM normal, sin ningún convertidor
      */
     private EmployeeStateJson state1;
-
     /**
      * Ejemplo de un enum en con property
      */
     private EmployeeStateJson2 state2;
-
     /**
      * Ejemplo de un enum con @JsonValue
      */
