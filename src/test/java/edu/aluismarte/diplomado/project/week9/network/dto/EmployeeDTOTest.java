@@ -18,7 +18,8 @@ class EmployeeDTOTest {
 
     private final ObjectMapper objectMapper = new ObjectMapper();
 
-    private static final String RAW_JSON = "{\"id\":1,\"name\":\"Lala\",\"state1\":\"3\",\"state2\":0}";
+    private static final String RAW_JSON = """
+            {"id":1,"name":"Lala","state1":"OUT","state2":"0","state3":2}""";
 
     private final EmployeeDTO employeeDTOBase = EmployeeDTO.builder()
             .id(1L)
@@ -31,12 +32,15 @@ class EmployeeDTOTest {
     @Test
     void serializeTest() throws JsonProcessingException {
         String jsonValue = objectMapper.writeValueAsString(employeeDTOBase);
+        System.out.println(jsonValue);
         assertEquals(RAW_JSON, jsonValue);
     }
 
     @Test
     void deserializeTest() throws IOException {
+        System.out.println("Raw JSON: " + RAW_JSON);
         EmployeeDTO employeeDTO = objectMapper.readValue(RAW_JSON, EmployeeDTO.class);
+        System.out.println(employeeDTO);
         assertEquals(employeeDTOBase.getId(), employeeDTO.getId());
         assertEquals(employeeDTOBase.getName(), employeeDTO.getName());
         assertEquals(employeeDTOBase.getState1(), employeeDTO.getState1());

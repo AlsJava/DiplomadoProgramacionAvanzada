@@ -13,6 +13,7 @@ import lombok.*;
 @Builder
 @Getter
 @Setter
+@ToString
 public class EmployeeDTO {
 
     private Long id;
