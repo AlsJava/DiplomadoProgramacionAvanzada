@@ -1,38 +1,35 @@
 package edu.aluismarte.diplomado.project.domain;
 
-import edu.aluismarte.diplomado.utils.MapJsonConverter;
 import lombok.*;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.keyvalue.annotation.KeySpace;
 
-import javax.persistence.*;
 import java.util.Map;
 import java.util.UUID;
 
 /**
+ * Este objeto no es un Domain de DB, es un hack para mostrar rápida un log progresivo
+ *
  * @author aluis on 6/19/2022.
+ * @implNote Deberia usarse un redis o incluso un kafka table para este caso
+ * @see <a href="https://www.baeldung.com/spring-data-key-value">Spring Key-Value API</a>
  */
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @Getter
 @Setter
-@Entity
-@Table(name = "logs")
+@KeySpace("logs")
 public class Log {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
-    @Column
     private String classOwner;
 
-    @Column
     private String process;
 
-    @Lob
-    @Column
     private String parameters;
 
-    @Convert(converter = MapJsonConverter.class)
     private Map<String, String> parameterMap;
 }
