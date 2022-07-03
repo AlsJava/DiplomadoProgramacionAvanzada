@@ -6,17 +6,13 @@ import edu.aluismarte.diplomado.project.week9.network.response.GetEmployeesRespo
 import edu.aluismarte.diplomado.project.week9.service.EmployeeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.validation.Valid;
-
 /**
  * @author aluis on 6/26/2022.
  */
-@Validated
 @RestController
 @RequiredArgsConstructor
 public class DTOController {
@@ -29,7 +25,7 @@ public class DTOController {
     }
 
     @PostMapping
-    public ResponseEntity<CreateEmployeeResponse> createEmployee(@Valid CreateEmployeeRequest createEmployeeRequest) {
+    public ResponseEntity<CreateEmployeeResponse> createEmployee(CreateEmployeeRequest createEmployeeRequest) {
         return ResponseEntity.ok(CreateEmployeeResponse.builder()
                 .employee(employeeService.createEmployee(createEmployeeRequest))
                 .build());
