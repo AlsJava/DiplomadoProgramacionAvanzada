@@ -1,8 +1,10 @@
 package edu.aluismarte.diplomado.project.week12.service;
 
 import edu.aluismarte.diplomado.project.domain.Log;
-import edu.aluismarte.diplomado.project.repositories.LogRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.keyvalue.core.KeyValueTemplate;
+import org.springframework.data.keyvalue.core.query.KeyValueQuery;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -15,25 +17,31 @@ import java.util.UUID;
 @Service
 public class LogService {
 
-    private final LogRepository logRepository;
+    private final KeyValueTemplate keyValueTemplate;
 
     public void save(Log log) {
-        logRepository.save(log);
-    }
-
-    public Iterable<Log> fetchAll() {
-        return logRepository.findAll();
+        keyValueTemplate.insert(log);
     }
 
     public Optional<Log> get(UUID id) {
-        return logRepository.findById(id);
+        return keyValueTemplate.findById(id, Log.class);
+    }
+
+    public Iterable<Log> fetchAll() {
+        return keyValueTemplate.findAll(Log.class);
     }
 
     public void update(Log log) {
-        logRepository.save(log);
+        keyValueTemplate.update(log);
     }
 
     public void delete(UUID id) {
-        logRepository.deleteById(id);
+        keyValueTemplate.delete(id, Log.class);
+    }
+
+    public Iterable<Log> getSortedListOfLogsBySalary() {
+        KeyValueQuery<Log> query = new KeyValueQuery<>();
+        query.setSort(Sort.by(Sort.Direction.DESC, "dateTime"));
+        return keyValueTemplate.find(query, Log.class);
     }
 }

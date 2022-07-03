@@ -4,6 +4,8 @@ import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.keyvalue.annotation.KeySpace;
 
+import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.Map;
 import java.util.UUID;
 
@@ -20,10 +22,12 @@ import java.util.UUID;
 @Getter
 @Setter
 @KeySpace("logs")
-public class Log {
+public class Log implements Serializable {
 
     @Id
     private UUID id;
+
+    private LocalDateTime dateTime;
 
     private String classOwner;
 
