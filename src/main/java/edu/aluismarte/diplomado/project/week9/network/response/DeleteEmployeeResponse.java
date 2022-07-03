@@ -1,13 +1,14 @@
 package edu.aluismarte.diplomado.project.week9.network.response;
 
-import edu.aluismarte.diplomado.project.week9.network.dto.EmployeeDTO;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * @author aluis on 6/26/2022.
  */
 @AllArgsConstructor
-@NoArgsConstructor
 @Builder
 @Getter
 @Setter
