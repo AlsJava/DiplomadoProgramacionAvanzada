@@ -30,7 +30,7 @@ public class CRUDController {
     /**
      * Representa la R del acrónimo de CRUD
      */
-    @GetMapping
+    @GetMapping("/CRUD")
     public ResponseEntity<GetEmployeesResponse> getEmployees() {
         return ResponseEntity.ok(GetEmployeesResponse.builder()
                 .employees(employeeService.getEmployees())
@@ -40,7 +40,7 @@ public class CRUDController {
     /**
      * Representa la C del acrónimo de CRUD
      */
-    @PostMapping
+    @PostMapping("/CRUD")
     public ResponseEntity<CreateEmployeeResponse> createEmployee(@RequestBody CreateEmployeeRequest createEmployeeRequest) {
         return ResponseEntity.ok(CreateEmployeeResponse.builder()
                 .employee(employeeService.createEmployee(createEmployeeRequest))
@@ -50,7 +50,7 @@ public class CRUDController {
     /**
      * Representa la U del acrónimo de CRUD
      */
-    @PutMapping
+    @PutMapping("/CRUD")
     public ResponseEntity<UpdateEmployeeResponse> updateEmployee(@RequestBody UpdateEmployeeRequest updateEmployeeRequest) {
         return ResponseEntity.ok(UpdateEmployeeResponse.builder()
                 .employee(employeeService.updateEmployee(updateEmployeeRequest))
@@ -60,7 +60,7 @@ public class CRUDController {
     /**
      * Representa la D del acrónimo de CRUD
      */
-    @DeleteMapping
+    @DeleteMapping("/CRUD")
     public ResponseEntity<DeleteEmployeeResponse> deleteEmployee(@RequestBody DeleteEmployeeRequest deleteEmployeeRequest) {
         employeeService.delete(deleteEmployeeRequest);
         return ResponseEntity.ok(DeleteEmployeeResponse.builder().build());
