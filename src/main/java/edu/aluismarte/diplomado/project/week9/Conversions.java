@@ -21,6 +21,9 @@ public class Conversions {
     public static class EmployeeStateConverter implements AttributeConverter<EmployeeState, Integer> {
         @Override
         public Integer convertToDatabaseColumn(EmployeeState attribute) {
+            if (attribute == null) {
+                return null;
+            }
             return attribute.getCode();
         }
 
