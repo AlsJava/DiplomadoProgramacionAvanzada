@@ -1,7 +1,8 @@
 package edu.aluismarte.diplomado.project.week9.network.dto;
 
-import edu.aluismarte.diplomado.model.project.EmployeeStateJson;
 import edu.aluismarte.diplomado.model.project.EmployeeStateJson2;
+import edu.aluismarte.diplomado.model.project.EmployeeStateJson3;
+import edu.aluismarte.diplomado.model.project.EmployeeStateJson;
 import lombok.*;
 
 /**
@@ -18,12 +19,17 @@ public class EmployeeDTO {
     private String name;
 
     /**
-     * Ejemplo de un enum en con property
+     * Ejemplo de ENUM normal, sin ningún convertidor
      */
     private EmployeeStateJson state1;
 
     /**
-     * Ejemplo de un enum con @JsonValue
+     * Ejemplo de un enum en con property
      */
     private EmployeeStateJson2 state2;
+
+    /**
+     * Ejemplo de un enum con @JsonValue
+     */
+    private EmployeeStateJson3 state3;
 }

@@ -29,7 +29,7 @@ class EmployeeStateJson2Test {
     void deserializeEnumTest() throws IOException {
         DemoEnum demoEnum = objectMapper.readValue(RAW_JSON, DemoEnum.class);
         System.out.println(demoEnum);
-        assertEquals(EmployeeStateJson2.OUT, demoEnum.getState2());
+        assertEquals(EmployeeStateJson3.OUT, demoEnum.getState2());
     }
 
     @AllArgsConstructor
@@ -41,7 +41,7 @@ class EmployeeStateJson2Test {
     static class DemoEnum {
 
         @Builder.Default
-        private EmployeeStateJson2 state2 = EmployeeStateJson2.OUT;
+        private EmployeeStateJson3 state2 = EmployeeStateJson3.OUT;
     }
 
 }

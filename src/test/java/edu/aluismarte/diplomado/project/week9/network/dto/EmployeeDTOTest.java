@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import edu.aluismarte.diplomado.model.project.EmployeeStateJson;
 import edu.aluismarte.diplomado.model.project.EmployeeStateJson2;
+import edu.aluismarte.diplomado.model.project.EmployeeStateJson3;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -24,6 +25,7 @@ class EmployeeDTOTest {
             .name("Lala")
             .state1(EmployeeStateJson.OUT)
             .state2(EmployeeStateJson2.ACTIVE)
+            .state3(EmployeeStateJson3.PENSIONER)
             .build();
 
     @Test
@@ -39,5 +41,6 @@ class EmployeeDTOTest {
         assertEquals(employeeDTOBase.getName(), employeeDTO.getName());
         assertEquals(employeeDTOBase.getState1(), employeeDTO.getState1());
         assertEquals(employeeDTOBase.getState2(), employeeDTO.getState2());
+        assertEquals(employeeDTOBase.getState3(), employeeDTO.getState3());
     }
 }

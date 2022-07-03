@@ -1,25 +1,15 @@
 package edu.aluismarte.diplomado.model.project;
 
-import com.fasterxml.jackson.annotation.JsonValue;
-import lombok.AllArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * El uso de property es para hacerlo directo, pero si queremos un tipo de dato especifico como entero
- * usamos el @JsonValue, solo que debemos también definir la lectura
+ * El uso de property es para hacerlo directo, también observar la otra opción
  *
  * @author aluis on 6/26/2022.
  */
-@AllArgsConstructor
 public enum EmployeeStateJson2 {
-    ACTIVE(0),
-    FIRED(1),
-    PENSIONER(2),
-    OUT(3);
-
-    private final int code;
-
-    @JsonValue
-    public int getCode() {
-        return code;
-    }
+    @JsonProperty("0") ACTIVE,
+    @JsonProperty("1") FIRED,
+    @JsonProperty("2") PENSIONER,
+    @JsonProperty("3") OUT
 }
