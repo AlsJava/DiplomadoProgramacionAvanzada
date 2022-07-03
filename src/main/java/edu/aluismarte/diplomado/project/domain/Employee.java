@@ -3,6 +3,7 @@ package edu.aluismarte.diplomado.project.domain;
 import edu.aluismarte.diplomado.model.project.EmployeeState;
 import edu.aluismarte.diplomado.project.week9.Conversions;
 import edu.aluismarte.diplomado.project.week9.network.dto.EmployeeDTO;
+import edu.aluismarte.diplomado.project.week9.network.request.UpdateEmployeeRequest;
 import lombok.*;
 
 import javax.persistence.*;
@@ -62,5 +63,11 @@ public class Employee {
                 .id(id)
                 .name(name)
                 .build();
+    }
+
+    public void applyChanges(UpdateEmployeeRequest updateEmployeeRequest) {
+        this.name = updateEmployeeRequest.getName();
+        this.description = updateEmployeeRequest.getDescription();
+        this.entryDate = updateEmployeeRequest.getEntryDate();
     }
 }

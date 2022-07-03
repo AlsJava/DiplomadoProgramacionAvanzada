@@ -5,6 +5,8 @@ import edu.aluismarte.diplomado.project.repositories.EmployeeRepository;
 import edu.aluismarte.diplomado.project.week9.FactoryPattern;
 import edu.aluismarte.diplomado.project.week9.network.dto.EmployeeDTO;
 import edu.aluismarte.diplomado.project.week9.network.request.CreateEmployeeRequest;
+import edu.aluismarte.diplomado.project.week9.network.request.DeleteEmployeeRequest;
+import edu.aluismarte.diplomado.project.week9.network.request.UpdateEmployeeRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -28,6 +30,17 @@ public class EmployeeService {
         Employee employee = FactoryPattern.EmployeeFactory.toEmployee(createEmployeeRequest);
         employeeRepository.save(employee);
         return employee.toDTO();
+    }
+
+    public EmployeeDTO updateEmployee(UpdateEmployeeRequest updateEmployeeRequest) {
+        Employee employee = employeeRepository.findById(updateEmployeeRequest.getId()).orElseThrow();
+        employee.applyChanges(updateEmployeeRequest);
+        employeeRepository.save(employee);
+        return employee.toDTO();
+    }
+
+    public void delete(DeleteEmployeeRequest deleteEmployeeRequest) {
+        employeeRepository.deleteById(deleteEmployeeRequest.getId());
     }
 
 }
