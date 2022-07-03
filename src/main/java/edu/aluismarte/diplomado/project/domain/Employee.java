@@ -48,9 +48,9 @@ public class Employee {
     @Column
     private String updatedBy;
     @Column
-    private LocalDateTime createdDate;
+    private LocalDateTime createdAt;
     @Column
-    private LocalDateTime updatedDate;
+    private LocalDateTime updatedAt;
 
     /**
      * Patrón más integrado y adecuado en la lógica, cada objeto se hace responsable de sus conversiones

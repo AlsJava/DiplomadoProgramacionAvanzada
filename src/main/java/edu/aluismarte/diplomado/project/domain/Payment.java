@@ -31,7 +31,7 @@ public class Payment {
     @Column
     private String updatedBy;
     @Column
-    private LocalDateTime createdDate;
+    private LocalDateTime createdAt;
     @Column
-    private LocalDateTime updatedDate;
+    private LocalDateTime updatedAt;
 }
