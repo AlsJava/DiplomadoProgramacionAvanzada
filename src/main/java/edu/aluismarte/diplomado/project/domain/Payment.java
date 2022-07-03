@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 /**
@@ -22,8 +23,15 @@ public class Payment {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
-    // TODO falta completar esto aqui
-
     @Column
     private BigDecimal amount;
+
+    @Column
+    private String createdBy;
+    @Column
+    private String updatedBy;
+    @Column
+    private LocalDateTime createdDate;
+    @Column
+    private LocalDateTime updatedDate;
 }
