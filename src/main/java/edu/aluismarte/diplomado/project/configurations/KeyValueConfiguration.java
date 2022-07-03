@@ -11,7 +11,10 @@ import org.springframework.data.map.repository.config.EnableMapRepositories;
 //import java.util.concurrent.ConcurrentHashMap;
 
 /**
+ * Esto es un force para demostrar un concepto, usar una DB adecuada para este caso.
+ *
  * @author aluis on 7/3/2022.
+ * @see <a href="https://www.baeldung.com/spring-data-key-value">Spring Key-Value API</a>
  */
 @EnableMapRepositories
 @Configuration

@@ -13,7 +13,7 @@ import java.util.UUID;
  * Este objeto no es un Domain de DB, es un hack para mostrar rápida un log progresivo
  *
  * @author aluis on 6/19/2022.
- * @implNote Deberia usarse un redis o incluso un kafka table para este caso
+ * @implNote Debería usarse un redis o incluso un kafka table para este caso con un simple POJO
  * @see <a href="https://www.baeldung.com/spring-data-key-value">Spring Key-Value API</a>
  */
 @AllArgsConstructor
