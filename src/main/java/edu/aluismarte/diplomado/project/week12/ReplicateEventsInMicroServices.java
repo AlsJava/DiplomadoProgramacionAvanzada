@@ -12,7 +12,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class ReplicateEventsInMicroServices {
 
-    // TODO hacer un objeto de spring e inicializarlo con un servicio
+    // TODO Hacer esto con la implementación del Objeto de LOG, que ya esta hecha, solo falta aplicar
 
     public void step1(int number) {
         log.info("Process {} step 1, with parameters: {}", "Demo", number);
