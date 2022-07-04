@@ -1,6 +1,15 @@
 package edu.aluismarte.diplomado.project.week12;
 
+import edu.aluismarte.diplomado.project.domain.LogEvent;
+import edu.aluismarte.diplomado.project.week12.service.LogEventService;
+import lombok.*;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.io.Serializable;
+import java.util.*;
 
 /**
  * A veces el DEBUG no es suficiente, necesitamos saber que ocurre con un proceso con ciertos eventos
@@ -10,27 +19,70 @@ import lombok.extern.slf4j.Slf4j;
  * @author aluis on 6/26/2022.
  */
 @Slf4j
+@RestController
+@RequiredArgsConstructor
 public class ReplicateEventsInMicroServices {
 
-    // TODO Hacer esto con la implementación del Objeto de LOG, que ya esta hecha, solo falta aplicar
+    private final LogEventService logEventService;
 
-    public void step1(int number) {
-        log.info("Process {} step 1, with parameters: {}", "Demo", number);
+    @GetMapping("/log/events/prepare")
+    public ResponseEntity<String> callLogEvent() {
+        ParameterEvent parameterEvent = ParameterEvent.builder()
+                .id(UUID.randomUUID().toString())
+                .parameters(new HashMap<>())
+                .build();
+        step1(parameterEvent);
+        step2(parameterEvent);
+        step3(parameterEvent);
+        return ResponseEntity.ok("Ready");
     }
 
-    public void step2(String data) {
-        log.info("Process {} step 2, with parameters: {}", "Demo", data);
-
+    @GetMapping("/log/events")
+    public ResponseEntity<List<LogEvent>> listEvents() {
+        List<LogEvent> logEvents = new ArrayList<>();
+        for (LogEvent logEvent : logEventService.fetchAll()) {
+            logEvents.add(logEvent);
+        }
+        return ResponseEntity.ok(logEvents);
     }
 
-    public void step3(int number, String data) {
-        log.info("Process {} step 3, with parameters: {}, {}", "Demo", number, data);
+    public void step1(ParameterEvent parameterEvent) {
+        log.info("Process step 1");
+        logEventService.save(LogEvent.builder()
+                .classOwner(getClass().getName())
+                .process("Demo 1")
+                .parameterMap(Map.of("step1", parameterEvent))
+                .build());
     }
 
-    public static void main(String[] args) {
-        ReplicateEventsInMicroServices replicateEventsInMicroServices = new ReplicateEventsInMicroServices();
-        replicateEventsInMicroServices.step1(1);
-        replicateEventsInMicroServices.step2("Hola");
-        replicateEventsInMicroServices.step3(5, "Mundo");
+    public void step2(ParameterEvent parameterEvent) {
+        log.info("Process step 2");
+        parameterEvent.getParameters().put("Random Value", "Holaaaaa");
+        logEventService.save(LogEvent.builder()
+                .classOwner(getClass().getName())
+                .process("Demo 1")
+                .parameterMap(Map.of("step2", parameterEvent))
+                .build());
+    }
+
+    public void step3(ParameterEvent parameterEvent) {
+        log.info("Process step 3");
+        parameterEvent.getParameters().put("Step 3 value", "Mundo");
+        logEventService.save(LogEvent.builder()
+                .classOwner(getClass().getName())
+                .process("Demo 1")
+                .parameterMap(Map.of("step3", parameterEvent))
+                .build());
+    }
+
+    @AllArgsConstructor
+    @NoArgsConstructor
+    @Builder
+    @Getter
+    @Setter
+    private static class ParameterEvent implements Serializable {
+
+        private String id;
+        private Map<String, String> parameters;
     }
 }

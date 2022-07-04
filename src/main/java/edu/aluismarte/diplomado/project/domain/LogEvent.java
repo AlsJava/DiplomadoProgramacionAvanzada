@@ -21,19 +21,19 @@ import java.util.UUID;
 @Builder
 @Getter
 @Setter
-@KeySpace("logs")
-public class Log implements Serializable {
+@KeySpace("logEvents")
+public class LogEvent implements Serializable {
 
     @Id
-    private UUID id;
+    @Builder.Default
+    private UUID id = UUID.randomUUID();
 
-    private LocalDateTime dateTime;
+    @Builder.Default
+    private LocalDateTime dateTime = LocalDateTime.now();
 
     private String classOwner;
 
     private String process;
 
-    private String parameters;
-
-    private Map<String, String> parameterMap;
+    private Map<String, Object> parameterMap;
 }
