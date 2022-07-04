@@ -33,8 +33,7 @@ public class LogsInMicroServices {
      */
     public long factorial(String id, int num) {
         log.info("Running process ID: {}", id);
-        Long result = FACTORIALS.get(num);
-        if (result == null) {
+        if (FACTORIALS.get(num) == null) {
             log.info("Starting factorial calculation process, value {} is not in memory", num);
             int size = FACTORIALS.size();
             for (int i = size; i <= num; i++) {
