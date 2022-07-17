@@ -7,8 +7,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.*;
 
 @Slf4j
@@ -57,17 +55,12 @@ public class SagaOrchestrator {
 
     private <T> void triggerCompensation(Saga<T> saga) {
         log.info("Triggering compensation SAGA {} : {}", saga.getName(), saga.getKey());
-        List<Class<? extends SagaStep<T>>> steps = new ArrayList<>();
-        for (Class<? extends SagaStep<T>> sagaStep : saga.getRequiredStep()) {
-            steps.add(sagaStep);
-            if (saga.getCurrentStep().equals(sagaStep)) {
-                break;
-            }
-        }
-        for (int i = steps.size() - 1; i >= 0; i--) {
-            Class<? extends SagaStep<T>> sagaStep = steps.get(i);
+        int index = saga.getRequiredStep().indexOf(saga.getCurrentStep());
+        for (int i = index; i >= 0; i--) {
+            Class<? extends SagaStep<T>> sagaStep = saga.getRequiredStep().get(i);
             SagaStep<T> bean = applicationContext.getBean(sagaStep);
             if (bean.getCompensator() != null) {
+                log.info("Triggering Compensation SAGA/Step: {}/{}", saga.getName(), bean.getName());
                 bean.getCompensator().handle(saga.getPayload());
             } else {
                 log.info("Step {}, no have Compensator", bean.getName());
