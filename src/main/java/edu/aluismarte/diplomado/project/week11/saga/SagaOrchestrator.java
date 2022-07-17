@@ -59,10 +59,10 @@ public class SagaOrchestrator {
         log.info("Triggering compensation SAGA {} : {}", saga.getName(), saga.getKey());
         List<Class<? extends SagaStep<T>>> steps = new ArrayList<>();
         for (Class<? extends SagaStep<T>> sagaStep : saga.getRequiredStep()) {
+            steps.add(sagaStep);
             if (saga.getCurrentStep().equals(sagaStep)) {
                 break;
             }
-            steps.add(sagaStep);
         }
         for (int i = steps.size() - 1; i >= 0; i--) {
             Class<? extends SagaStep<T>> sagaStep = steps.get(i);
