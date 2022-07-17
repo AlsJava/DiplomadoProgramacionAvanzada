@@ -21,9 +21,10 @@ public class Week11Controller {
 
     @GetMapping("/week11")
     public ResponseEntity<ExerciseResponse> exercise(@RequestParam(defaultValue = "0") String explote,
+                                                     @RequestParam(defaultValue = "4") int vacationDays,
                                                      @RequestParam(defaultValue = "2022") int year,
                                                      @RequestParam(defaultValue = "7") int month,
                                                      @RequestParam(defaultValue = "16") int day) {
-        return ResponseEntity.ok(week11Service.exercise(explote.equals("1"), LocalDate.of(year, month, day)));
+        return ResponseEntity.ok(week11Service.exercise(explote.equals("1"), vacationDays, LocalDate.of(year, month, day)));
     }
 }

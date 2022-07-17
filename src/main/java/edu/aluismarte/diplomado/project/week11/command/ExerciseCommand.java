@@ -17,5 +17,6 @@ import java.time.LocalDate;
 public class ExerciseCommand extends Command<ExerciseResponse> {
 
     private LocalDate localDate;
+    private int vacationDays;
     private boolean explote;
 }

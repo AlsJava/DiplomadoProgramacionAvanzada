@@ -17,9 +17,10 @@ public class Week11Service {
 
     private final CommandBus commandBus;
 
-    public ExerciseResponse exercise(boolean explote, LocalDate localDate) {
+    public ExerciseResponse exercise(boolean explote, int vacationDays, LocalDate localDate) {
         return commandBus.sendCommand(ExerciseCommand.builder()
                 .explote(explote)
+                .vacationDays(vacationDays)
                 .localDate(localDate)
                 .build());
     }
