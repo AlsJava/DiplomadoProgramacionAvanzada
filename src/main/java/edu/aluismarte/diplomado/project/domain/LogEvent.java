@@ -33,6 +33,8 @@ public class LogEvent implements Serializable {
 
     private String classOwner;
 
+    private UUID processId;
+
     private String process;
 
     private Map<String, Object> parameterMap;

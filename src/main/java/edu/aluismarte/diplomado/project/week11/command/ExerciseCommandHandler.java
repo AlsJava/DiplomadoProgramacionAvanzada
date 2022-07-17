@@ -27,7 +27,7 @@ public class ExerciseCommandHandler implements CommandHandler<ExerciseResponse, 
 
     @Override
     public ExerciseResponse handle(ExerciseCommand command) {
-        Saga<ExerciseResponse> saga = SagaFactory.createExerciseSaga(UUID.randomUUID().toString(), command);
+        Saga<ExerciseResponse> saga = SagaFactory.createExerciseSaga(UUID.randomUUID(), command);
         return sagaOrchestrator.orchestrate(saga, timeout);
     }
 }

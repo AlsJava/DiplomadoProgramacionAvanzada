@@ -23,7 +23,7 @@ public class SagaDemoService {
 
     public String runDemo() {
         Demo demo = Demo.builder().id(UUID.randomUUID().toString()).build();
-        Saga<DemoResponse> saga = SagaFactory.createDemoSaga("RandomID to identify saga", demo);
+        Saga<DemoResponse> saga = SagaFactory.createDemoSaga(UUID.randomUUID(), demo);
         DemoResponse demoResponse = sagaOrchestrator.orchestrate(saga, TIMEOUT);
         return demoResponse.getResult();
     }
