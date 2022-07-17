@@ -1,7 +1,7 @@
 package edu.aluismarte.diplomado.project.week12.utils;
 
 import edu.aluismarte.diplomado.project.week12.exceptions.EmployeeNotFound;
-import edu.aluismarte.diplomado.project.week12.exceptions.NoFound;
+import edu.aluismarte.diplomado.project.week12.exceptions.NoFoundException;
 import edu.aluismarte.diplomado.project.week12.model.APIError;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -28,8 +28,8 @@ public class ExceptionAdvisorHandler {
      * @param ex Excepción a manejar
      * @return Un objeto de error, en este caso uno creado para tener respuesta standard.
      */
-    @ExceptionHandler(NoFound.class)
-    public ResponseEntity<APIError> handle(NoFound ex) {
+    @ExceptionHandler(NoFoundException.class)
+    public ResponseEntity<APIError> handle(NoFoundException ex) {
         return createResponse(ex.getMessage(), HttpStatus.BAD_REQUEST);
     }
 

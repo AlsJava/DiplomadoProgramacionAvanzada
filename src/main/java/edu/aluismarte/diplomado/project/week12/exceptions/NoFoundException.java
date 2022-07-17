@@ -10,9 +10,9 @@ import java.text.MessageFormat;
  * @author aluis on 7/17/2022.
  * @implNote Esto es un ejemplo genérico, siempre debería ser específico, mirar la otra excepción (EmployeeNotFound)
  */
-public class NoFound extends RuntimeException {
+public class NoFoundException extends RuntimeException {
 
-    public NoFound(String data) {
+    public NoFoundException(String data) {
         super(MessageFormat.format("Object {0} No found", data));
     }
 }
