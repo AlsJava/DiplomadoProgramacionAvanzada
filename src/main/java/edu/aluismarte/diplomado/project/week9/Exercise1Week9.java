@@ -10,5 +10,5 @@ package edu.aluismarte.diplomado.project.week9;
  * @author aluis on 6/4/2022.
  * @implNote Deben usar el patrón adecuado para cada tarea
  */
-public class Exercise1Week11 {
+public class Exercise1Week9 {
 }
