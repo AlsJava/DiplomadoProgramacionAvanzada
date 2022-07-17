@@ -6,6 +6,8 @@ import edu.aluismarte.diplomado.project.week11.model.ExerciseResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+
 /**
  * @author aluis on 7/17/2022.
  */
@@ -15,7 +17,10 @@ public class Week11Service {
 
     private final CommandBus commandBus;
 
-    public ExerciseResponse exercise(boolean explote) {
-        return commandBus.sendCommand(ExerciseCommand.builder().explote(explote).build());
+    public ExerciseResponse exercise(boolean explote, LocalDate localDate) {
+        return commandBus.sendCommand(ExerciseCommand.builder()
+                .explote(explote)
+                .localDate(localDate)
+                .build());
     }
 }

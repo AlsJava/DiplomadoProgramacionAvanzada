@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.LocalDate;
+
 /**
  * @author aluis on 6/4/2022.
  */
@@ -18,7 +20,10 @@ public class Week11Controller {
     private final Week11Service week11Service;
 
     @GetMapping("/week11")
-    public ResponseEntity<ExerciseResponse> exercise(@RequestParam(defaultValue = "0") String explote) {
-        return ResponseEntity.ok(week11Service.exercise(explote.equals("1")));
+    public ResponseEntity<ExerciseResponse> exercise(@RequestParam(defaultValue = "0") String explote,
+                                                     @RequestParam(defaultValue = "2022") int year,
+                                                     @RequestParam(defaultValue = "7") int month,
+                                                     @RequestParam(defaultValue = "16") int day) {
+        return ResponseEntity.ok(week11Service.exercise(explote.equals("1"), LocalDate.of(year, month, day)));
     }
 }
