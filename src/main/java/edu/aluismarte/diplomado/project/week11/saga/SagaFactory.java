@@ -20,7 +20,7 @@ public class SagaFactory {
         sagaPayload.addProperty(new SagaPayLoadKey<>("MyId", Demo.class), demo);
         return Saga.<DemoResponse>builder()
                 .name("Hola")
-                .key("My Key")
+                .key(key)
                 .payload(sagaPayload)
                 .requiredStep(List.of(
                         SagaDemoStep1.class,

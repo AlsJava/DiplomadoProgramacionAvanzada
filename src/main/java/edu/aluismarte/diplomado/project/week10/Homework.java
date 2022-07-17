@@ -1,7 +1,7 @@
 package edu.aluismarte.diplomado.project.week10;
 
 /**
- * Se tendrá un proyecto por alumno donde tendrá que aplicar el patrón Command (SQRS).
+ * Se tendrá un proyecto por alumno donde tendrá que aplicar el patrón Command (CQRS).
  *
  * Se espera que en el inicio de los objetos CRUD se creen usando el patrón.
  *

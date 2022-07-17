@@ -7,6 +7,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.*;
 
 @Slf4j
@@ -41,7 +43,7 @@ public class SagaOrchestrator {
             saga.setCurrentStep(sagaStep);
             try {
                 SagaStep<T> bean = applicationContext.getBean(sagaStep);
-                log.info("Executing step: {}", bean.getName());
+                log.info("Executing step for SAGA {} : {}", saga.getName(), bean.getName());
                 bean.getHandler().handle(saga.getPayload());
             } catch (Exception ex) {
                 triggerCompensation(saga);
@@ -54,14 +56,21 @@ public class SagaOrchestrator {
     }
 
     private <T> void triggerCompensation(Saga<T> saga) {
-        log.info("Triggering compensation: {}", saga.getKey());
+        log.info("Triggering compensation SAGA {} : {}", saga.getName(), saga.getKey());
+        List<Class<? extends SagaStep<T>>> steps = new ArrayList<>();
         for (Class<? extends SagaStep<T>> sagaStep : saga.getRequiredStep()) {
             if (saga.getCurrentStep().equals(sagaStep)) {
                 break;
             }
+            steps.add(sagaStep);
+        }
+        for (int i = steps.size() - 1; i >= 0; i--) {
+            Class<? extends SagaStep<T>> sagaStep = steps.get(i);
             SagaStep<T> bean = applicationContext.getBean(sagaStep);
             if (bean.getCompensator() != null) {
                 bean.getCompensator().handle(saga.getPayload());
+            } else {
+                log.info("Step {}, no have Compensator", bean.getName());
             }
         }
     }

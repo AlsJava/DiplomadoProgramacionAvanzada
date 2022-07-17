@@ -12,4 +12,17 @@ public class SagaPayLoadKey<T> {
         this.id = id;
         this.type = type;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof SagaPayLoadKey) {
+            return ((SagaPayLoadKey) obj).id.equals(id);
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return id.hashCode();
+    }
 }
