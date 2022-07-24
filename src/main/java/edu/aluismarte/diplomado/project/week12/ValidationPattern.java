@@ -25,7 +25,7 @@ public class ValidationPattern {
 
         /**
          * El campo de nombre no puede estar vacío, con esto lo valido en el request
-         * COn este avito que me envien un espacio vacio
+         * Con este hábito que me envíen un espacio vacío
          */
         @NotBlank
         private String name;
@@ -36,7 +36,7 @@ public class ValidationPattern {
         private String description;
 
         /**
-         * Este campo jamas puede ser null, siempre necesito una fecha.
+         * Este campo jamás puede ser null, siempre necesito una fecha.
          * Tampoco un empleado puede entrar en el pasado, por lo que debe siempre tener una fecha del hoy o futuro
          */
         @NotNull

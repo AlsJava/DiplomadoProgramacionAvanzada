@@ -6,7 +6,7 @@ package edu.aluismarte.diplomado.project.week11;
  *
  * El objetivo es entender las piezas que se tienen y su importancia a la hora de separar la lógica
  *
- * Pasos s seguir:
+ * Pasos a seguir:
  *  - Crear un empleado ficticio y ponerlo en la SAGA
  *  - Calcular la fecha de retorno
  *  - Retornar la fecha de retorno
