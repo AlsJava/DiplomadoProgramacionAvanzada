@@ -9,6 +9,22 @@ import java.util.Map;
  * Hacer una implementación del sistema de LOG correctamente
  * <p>
  * Hacer que casa proceso haga el log adecuado según la necesidad
+ * <p>
+ * ¿Qué es fibonacci?
+ * En matemáticas, la sucesión de Fibonacci (a veces mal llamada serie de Fibonacci) es la sucesión infinita de números naturales.
+ * 0,1,1,2,3,5,8,13,21,34,55,89,144,233,377…
+ * <p>
+ * Ejemplo:
+ * Fibonacci(0) = 0
+ * Fibonacci(1) = 1
+ * Fibonacci(2) = 1
+ * Fibonacci(3) = 2
+ * Fibonacci(4) = 3
+ * Fibonacci(5) = 5
+ * Fibonacci(6) = 8
+ * Fibonacci(7) = 13
+ * Fibonacci(8) = 21
+ * Fibonacci(9) = 34
  *
  * @author aluis on 6/4/2022.
  */
