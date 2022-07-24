@@ -11,6 +11,19 @@ import java.util.UUID;
  * <p>
  * Una parte importante de un proyecto es poder entender que pasó paso a paso
  * Como establecer el seguimiento de un request, ya que cada request es asincrónico
+ * <p>
+ * ¿Qué es un factorial?
+ * Cantidad que resulta de la multiplicación de determinado número natural por todos los números naturales que le anteceden excluyendo el cero;
+ * se representa por n!
+ * <p>
+ * Ejemplo:
+ * 0! = 1 = 1
+ * 1! = 1 = 1
+ * 2! = 2 * 1 = 2
+ * 3! = 3 * 2 * 1 = 6
+ * 4! = 4 * 3 * 2 * 1 = 24
+ * 5! = 5 * 4 * 3 * 2 * 1 = 120
+ * 6! = 6 * 5 * 4 * 3 * 2 * 1 = 720
  *
  * @author aluis on 6/19/2022.
  */
@@ -32,17 +45,17 @@ public class LogsInMicroServices {
      * @return Factorial del número
      */
     public long factorial(String id, int num) {
-        log.info("Running process ID: {}", id);
+        log.info("Running process ID: {} and factorial {} ", id, num);
         if (FACTORIALS.get(num) == null) {
-            log.info("Starting factorial calculation process, value {} is not in memory", num);
+            log.info("{} - Starting factorial calculation process, value {} is not in memory", id, num);
             int size = FACTORIALS.size();
             for (int i = size; i <= num; i++) {
                 Long lastValueCalculated = FACTORIALS.get(i - 1);
                 long factorial = lastValueCalculated * i;
-                log.debug("Factorial ({}) pre calculated is {}", i, factorial);
+                log.debug("{} - Factorial ({}) pre calculated is {}", id, i, factorial);
                 FACTORIALS.put(i, factorial);
             }
-            log.info("Ending factorial calculation process, value {}", num);
+            log.info("{} - Ending factorial calculation process, value {}", id, num);
         }
         return FACTORIALS.get(num);
     }
@@ -53,9 +66,13 @@ public class LogsInMicroServices {
         long factorial = logsInMicroServices.factorial(UUID.randomUUID().toString(), num);
         System.out.println("Factorial of " + num + " is " + factorial);
         System.out.println("-------------------");
-        logsInMicroServices.factorial(UUID.randomUUID().toString(), 5);
+        num = 5;
+        factorial = logsInMicroServices.factorial(UUID.randomUUID().toString(), num);
+        System.out.println("Factorial of " + num + " is " + factorial);
         System.out.println("-------------------");
-        logsInMicroServices.factorial(UUID.randomUUID().toString(), 10);
+        num = 10;
+        factorial = logsInMicroServices.factorial(UUID.randomUUID().toString(), num);
+        System.out.println("Factorial of " + num + " is " + factorial);
     }
 
 }
