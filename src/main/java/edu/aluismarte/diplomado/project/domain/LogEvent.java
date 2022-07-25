@@ -31,11 +31,11 @@ public class LogEvent implements Serializable {
     @Builder.Default
     private LocalDateTime dateTime = LocalDateTime.now();
 
-    private String classOwner;
+    private Class<?> classOwner;
 
     private UUID processId;
 
     private String process;
 
-    private Map<String, Object> parameterMap;
+    private Map<String, Object> parametersMap;
 }

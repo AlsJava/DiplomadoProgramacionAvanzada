@@ -49,9 +49,9 @@ public class ReplicateEventsInMicroServices {
     public void step1(ParameterEvent parameterEvent) {
         log.info("Process step 1");
         logEventService.save(LogEvent.builder()
-                .classOwner(getClass().getName())
+                .classOwner(getClass())
                 .process("Demo 1")
-                .parameterMap(Map.of("step1", parameterEvent))
+                .parametersMap(Map.of("step1", parameterEvent))
                 .build());
     }
 
@@ -59,9 +59,9 @@ public class ReplicateEventsInMicroServices {
         log.info("Process step 2");
         parameterEvent.getParameters().put("Random Value", "Holaaaaa");
         logEventService.save(LogEvent.builder()
-                .classOwner(getClass().getName())
+                .classOwner(getClass())
                 .process("Demo 1")
-                .parameterMap(Map.of("step2", parameterEvent))
+                .parametersMap(Map.of("step2", parameterEvent))
                 .build());
     }
 
@@ -69,9 +69,9 @@ public class ReplicateEventsInMicroServices {
         log.info("Process step 3");
         parameterEvent.getParameters().put("Step 3 value", "Mundo");
         logEventService.save(LogEvent.builder()
-                .classOwner(getClass().getName())
+                .classOwner(getClass())
                 .process("Demo 1")
-                .parameterMap(Map.of("step3", parameterEvent))
+                .parametersMap(Map.of("step3", parameterEvent))
                 .build());
     }
 
