@@ -1,20 +1,16 @@
 plugins {
     id "java"
-    id 'org.springframework.boot' version '2.7.1'
-    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'org.springframework.boot' version "$springVersion"
+    id 'io.spring.dependency-management' version "$springDependencyVersion"
 }
 
 group "edu.aluismarte.diplomado"
-version "0.9.5"
+version "1.0.0"
 
 configurations {
     compileOnly {
         extendsFrom annotationProcessor
     }
-}
-
-ext {
-    lombok_version = '1.18.24'
 }
 
 repositories {
@@ -31,7 +27,7 @@ dependencies {
 
     implementation("org.springframework.data:spring-data-keyvalue:2.7.0") // Simulación de DB Key Value para demostración
 
-    runtimeOnly("com.h2database:h2:2.1.212")
+    runtimeOnly("com.h2database:h2:$h2Version")
 
     implementation("xalan:xalan:2.7.2") // Probar con otras variantes
 
@@ -46,8 +42,8 @@ dependencies {
     implementation("xerces:xercesImpl:2.12.2")
 
     // Boilerplate Code
-    compileOnly("org.projectlombok:lombok:$lombok_version")
-    annotationProcessor("org.projectlombok:lombok:$lombok_version")
+    compileOnly("org.projectlombok:lombok:$lombokVersion")
+    annotationProcessor("org.projectlombok:lombok:$lombokVersion")
 
     // JSON parser
     // User Versiones viejas de librerias genera vulnerabilidades (Estan solo en los test para demostrar funcionamiento solamente)
@@ -62,12 +58,12 @@ dependencies {
     implementation('com.squareup.okhttp3:okhttp:4.10.0') // HTTP connections
 
     testRuntimeOnly('org.junit.jupiter:junit-jupiter-engine:5.8.2')
-    testCompileOnly("org.projectlombok:lombok:$lombok_version")
+    testCompileOnly("org.projectlombok:lombok:$lombokVersion")
     testImplementation('org.junit.jupiter:junit-jupiter-api:5.8.2')
     testImplementation('org.mockito:mockito-core:4.4.0')
     testImplementation('org.mockito:mockito-inline:4.4.0') // Static mock
     testImplementation("org.springframework.boot:spring-boot-starter-test")
-    testAnnotationProcessor("org.projectlombok:lombok:$lombok_version")
+    testAnnotationProcessor("org.projectlombok:lombok:$lombokVersion")
 }
 
 test {
